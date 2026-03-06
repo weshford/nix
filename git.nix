@@ -7,7 +7,7 @@
     config = {
       user = {
         name = "weshford"; # change if you want
-        email = "silvanbelten@example.com";
+        email = "95880628+weshford@users.noreply.github.com";
       };
 
       init.defaultBranch = "main";
