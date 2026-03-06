@@ -46,7 +46,7 @@
   system.configurationRevision = builtins.readFile ./.git/HEAD;
 
   # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
+  # You can disable this if you're only using the Wayland session. test
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
