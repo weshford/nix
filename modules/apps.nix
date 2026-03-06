@@ -13,6 +13,7 @@ in
       spotify
       obs-studio
       vlc
+      discord
     ];
   };
 }
