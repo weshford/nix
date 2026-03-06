@@ -13,6 +13,7 @@
       ./modules/development.nix
       ./modules/gaming.nix
       ./modules/windows-apps.nix
+      ./modules/alias.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -106,6 +107,7 @@
   my.modules.develop.enable = true;
   my.modules.gaming.enable = true;
   my.modules.windowsApps.enable = true;
+  my.modules.shellAliases.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
