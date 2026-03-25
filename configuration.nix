@@ -8,13 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./home/weshy/hardware.nix
-      ./modules/apps.nix
       ./modules/cli.nix
       ./modules/development.nix
       ./modules/gaming.nix
       ./modules/windows-apps.nix
       ./modules/alias.nix
-      ./modules/programs.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
