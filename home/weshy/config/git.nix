@@ -4,19 +4,13 @@
   programs.git = {
     enable = true;
 
-    config = {
-      user = {
-        name = "weshford";
-        email = "95880628+weshford@users.noreply.github.com";
-      };
+    userName = "weshford";
+    userEmail = "95880628+weshford@users.noreply.github.com";
 
+    extraConfig = {
       init.defaultBranch = "main";
-
       pull.rebase = false;
-
-      core = {
-        editor = "nano";
-      };
+      core.editor = "nano";
     };
   };
 }
