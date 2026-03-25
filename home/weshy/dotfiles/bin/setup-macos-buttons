@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Apply macOS-style colored buttons via Breeze decoration + custom button styling
+
+# This leverages KDE's button color system to create colored appearance
+
+if command -v kwriteconfig6 >/dev/null 2>&1; then
+  # Set decoration to use Breeze as base
+  kwriteconfig6 --file kwinrc --group "org.kde.kdecoration2" --key "library" "org.kde.breeze"
+  kwriteconfig6 --file kwinrc --group "org.kde.kdecoration2" --key "theme" "Breeze"
+  
+  # Button positions: M (minimize left), A (maximize), X (close right)
+  kwriteconfig6 --file kwinrc --group "org.kde.kdecoration2" --key "ButtonsOnLeft" "M"
+  kwriteconfig6 --file kwinrc --group "org.kde.kdecoration2" --key "ButtonsOnRight" "AX"
+  
+  # Apply colors to button states
+  # Red for close button
+  kwriteconfig6 --file kdeglobals --group "Colors:Button" --key "ForegroundNegative" "255,95,86"
+  
+  # Yellow for maximize button  
+  kwriteconfig6 --file kdeglobals --group "Colors:Button" --key "ForegroundNeutral" "255,189,46"
+  
+  # Green for minimize button
+  kwriteconfig6 --file kdeglobals --group "Colors:Button" --key "ForegroundPositive" "39,201,142"
+  
+  # Also set accent colors for active state
+  kwriteconfig6 --file kdeglobals --group "General" --key "AccentColor" "110,81,145"
+  
+  # Reload KWin
+  qdbus org.kde.KWin /KWin org.kde.KWin.reloadConfig 2>/dev/null || true
+  
+  echo "✓ macOS colored buttons applied (Red=Close, Yellow=Maximize, Green=Minimize)"
+else
+  echo "✗ kwriteconfig6 not found"
+  exit 1
+fi
