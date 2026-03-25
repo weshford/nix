@@ -9,6 +9,6 @@
     ".local/share/color-schemes/MacOSLighter.colors".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/assets/plasma-tahoe/ColorSchemes/MacOSLighter.colors";
     ".local/share/plasma/desktoptheme/macOS Light".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/assets/plasma-tahoe/PlasmaStyles/macOS-Light";
 
-    ".icons/default/index.theme".source = ./dotfiles/icons-default/index.theme;
+    ".icons/default/index.theme".source = ../dotfiles/icons-default/index.theme;
   };
 }
