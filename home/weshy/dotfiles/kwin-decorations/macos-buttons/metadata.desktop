@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Service
-X-KDE-ServiceTypes=KDecorations2/Decoration
-X-KDE-PluginInfo-Name=macos-buttons
-X-KDE-PluginInfo-Version=1.0
-Name=macOS Buttons
-Comment=KDE window decoration with colored circle buttons
-Icon=window
