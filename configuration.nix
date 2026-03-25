@@ -7,8 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./git.nix
+      ./home/weshy/hardware.nix
+      ./modules/git.nix
       ./modules/apps.nix
       ./modules/cli.nix
       ./modules/development.nix
