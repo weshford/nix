@@ -10,9 +10,10 @@
 
   imports = [
     # System integration
-    ./system/desktop.nix
-    ./system/window-decoration.nix
     ./system/symlinks.nix
+
+    # Hyprland
+    ./hyprland/default.nix
 
     # Configuration
     ./config/git.nix
@@ -30,6 +31,11 @@
   ];
 
   home.stateVersion = "25.11";
+
+  my.home.hyprland.enable = true;
+  my.home.waybar.enable = true;
+  my.home.rofi.enable = true;
+  my.home.dunst.enable = true;
 
   programs.home-manager.enable = true;
 }
