@@ -9,10 +9,10 @@ in
   config = lib.mkIf cfg.enable {
     environment.shellAliases = {
       # nix alias
-      "nixbuild" = "sudo nixos-rebuild switch --flake /etc/nixos#weshy";
-      "nixtest" = "sudo nixos-rebuild test --flake /etc/nixos#weshy";
-      "nixboot" = "sudo nixos-rebuild boot --flake /etc/nixos#weshy";
-      "nixdry" = "sudo nixos-rebuild dry-activate --flake /etc/nixos#weshy";
+      "nixbuild" = "sudo nixos-rebuild switch --flake /etc/nixos#$(hostname)";
+      "nixtest" = "sudo nixos-rebuild test --flake /etc/nixos#$(hostname)";
+      "nixboot" = "sudo nixos-rebuild boot --flake /etc/nixos#$(hostname)";
+      "nixdry" = "sudo nixos-rebuild dry-activate --flake /etc/nixos#$(hostname)";
       
       # flake alias
       "flakebuild" = "nix build .#";

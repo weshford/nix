@@ -2,12 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, hostName, hostPath, primaryUser, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./home/weshy/hardware.nix
+      (hostPath + "/hardware.nix")
       ./modules/cli.nix
       ./modules/development.nix
       ./modules/gaming.nix
@@ -22,7 +22,7 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "weshy"; # Define your hostname.
+  networking.hostName = lib.mkDefault hostName; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -90,9 +90,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.weshy = {
+  users.users.${primaryUser} = {
     isNormalUser = true;
-    description = "weshy";
+    description = primaryUser;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
