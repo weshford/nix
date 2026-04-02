@@ -44,10 +44,39 @@
               useDistroLogo = false;
             }
             {
+              defaultSettings = {
+                enableTodoIntegration = false;
+                notecardsEnabled = true;
+                pincardsEnabled = true;
+                showCloseButton = true;
+              };
               id = "plugin:clipper";
             }
-          ];
-          center = [
+            {
+              id = "plugin:screen-toolkit";
+            }
+            {
+              defaultSettings = {
+                autoMount = false;
+                fileBrowser = "yazi";
+                hideWhenEmpty = false;
+                iconColor = "none";
+                showBadge = false;
+                showNotifications = true;
+                terminalCommand = "kitty";
+              };
+              id = "plugin:usb-drive-manager";
+            }
+            {
+              capsLockIcon = "square-letter-c";
+              hideWhenOff = false;
+              id = "LockKeys";
+              numLockIcon = "square-letter-n";
+              scrollLockIcon = "square-letter-s";
+              showCapsLock = true;
+              showNumLock = true;
+              showScrollLock = true;
+            }
             {
               characterCount = 2;
               colorizeIcons = false;
@@ -70,11 +99,22 @@
               unfocusedIconsOpacity = 1;
             }
           ];
+          center = [
+            {
+              colorName = "primary";
+              hideWhenIdle = true;
+              id = "AudioVisualizer";
+              width = 700;
+            }
+          ];
           right = [
+            {
+              id = "plugin:privacy-indicator";
+            }
             {
               deviceNativePath = "__default__";
               displayMode = "graphic-clean";
-              hideIfIdle = false;
+              hideIfIdle = true;
               hideIfNotDetected = true;
               id = "Battery";
               showNoctaliaPerformance = false;
@@ -84,6 +124,13 @@
               displayMode = "onhover";
               iconColor = "none";
               id = "Bluetooth";
+              textColor = "none";
+            }
+            {
+              displayMode = "onhover";
+              iconColor = "none";
+              id = "Volume";
+              middleClickCommand = "pwvucontrol || pavucontrol";
               textColor = "none";
             }
             {
@@ -109,6 +156,10 @@
               icon = "noctalia";
               id = "ControlCenter";
               useDistroLogo = true;
+            }
+            {
+              iconColor = "error";
+              id = "SessionMenu";
             }
           ];
         };
@@ -193,6 +244,7 @@
         name = "Waiblingen";
         weatherEnabled = true;
         weatherShowEffects = true;
+        weatherTaliaMascotAlways = false;
         useFahrenheit = false;
         use12hourFormat = false;
         showWeekNumberInCalendar = false;
@@ -312,9 +364,9 @@
           { enabled = true; id = "profile-card"; }
           { enabled = true; id = "shortcuts-card"; }
           { enabled = true; id = "audio-card"; }
-          { enabled = false; id = "brightness-card"; }
+          { enabled = true; id = "brightness-card"; }
           { enabled = true; id = "weather-card"; }
-          { enabled = true; id = "media-sysmon-card"; }
+          { enabled = false; id = "media-sysmon-card"; }
         ];
       };
       
@@ -359,7 +411,7 @@
         monitors = [ ];
         pinnedApps = [ ];
         colorizeIcons = false;
-        showLauncherIcon = true;
+        showLauncherIcon = false;
         launcherPosition = "start";
         launcherUseDistroLogo = false;
         launcherIcon = "";
@@ -374,7 +426,7 @@
         animationSpeed = 1;
         sitOnFrame = false;
         showDockIndicator = true;
-        indicatorThickness = 6;
+        indicatorThickness = 3;
         indicatorColor = "primary";
         indicatorOpacity = 0.6;
       };
@@ -383,7 +435,7 @@
         bluetoothRssiPollingEnabled = false;
         bluetoothRssiPollIntervalMs = 60000;
         networkPanelView = "wifi";
-        wifiDetailsViewMode = "grid";
+        wifiDetailsViewMode = "list";
         bluetoothDetailsViewMode = "grid";
         bluetoothHideUnnamedDevices = false;
         disableDiscoverability = false;
@@ -456,7 +508,7 @@
         volumeStep = 5;
         volumeOverdrive = false;
         spectrumFrameRate = 30;
-        visualizerType = "linear";
+        visualizerType = "wave";
         spectrumMirrored = true;
         mprisBlacklist = [ ];
         preferredPlayer = "";
@@ -532,11 +584,16 @@
       };
       
       desktopWidgets = {
-        enabled = false;
+        enabled = true;
         overviewEnabled = true;
         gridSnap = false;
         gridSnapScale = false;
-        monitorWidgets = [ ];
+        monitorWidgets = [
+          {
+            name = "eDP-1";
+            widgets = [ ];
+          }
+        ];
       };
     };
   };
