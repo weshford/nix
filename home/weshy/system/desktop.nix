@@ -9,7 +9,7 @@
         "XCURSOR_THEME,macOS"
       ];
 
-      monitor = ",preferred,auto,0.9";
+      monitor = ",preferred,auto,1.0";
 
       general = {
         gaps_in = 5;
