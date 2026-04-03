@@ -253,7 +253,7 @@
         panelBackgroundOpacity = 0.93;
         translucentWidgets = false;
         panelsAttachedToBar = true;
-        settingsPanelMode = "attached";
+        settingsPanelMode = "centered";
         settingsPanelSideBarCardStyle = false;
       };
       
