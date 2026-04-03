@@ -1,13 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  home.pointerCursor = {
-    gtk.enable = true;
-    name = "macOS";
-    package = null;
-    size = 24;
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
