@@ -15,7 +15,6 @@
     # Configuration
     ./config/git.nix
     ./config/kitty.nix
-    ./config/weathr.nix
     ./config/fastfetch.nix
     ./config/noctalia.nix
 
