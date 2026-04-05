@@ -56,11 +56,9 @@
       bind = [
         "$mod, T, exec, $terminal"
         "$mod, C, killactive,"
-        "$mod, L, exit,"
+        "$mod SHIFT ALT, L, exit,"
         "$mod, V, togglefloating,"
         "$mod, F, fullscreen,"
-        
-        "SUPER, A, exec, qs -c noctalia-shell ipc call plugin:wallcards toggle"
 
         # Workspace keybinds
         "$mod, 1, workspace, 1"
@@ -84,6 +82,14 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
+
+        # noctlia shell things
+        "$mod SHIFT, H, exec, $ipc wallpaper toggle"
+        "$mod SHIFT, V, exec, $ipc launcher clipboard"
+        "$mod, I, exec, $ipc settings toggle"
+        "$mod, L, exec, $ipc lockScreen lock"
+        "$mod, R, exec, $ipc launcher command"
+        "ALT, TAB, exec, $ipc launcher windows"
 
         # Zoom
         # "binde = $mod, equal, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')"
