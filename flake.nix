@@ -20,7 +20,7 @@
   outputs = { nixpkgs, home-manager, noctalia, ... }:
     let
       hosts = {
-        weshy = {
+        aspire = {
           system = "x86_64-linux";
           userNames = [ "weshy" ];
         };
