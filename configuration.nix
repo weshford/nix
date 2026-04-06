@@ -109,7 +109,6 @@
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
-  my.modules.cli.enable = true;
   my.modules.develop.enable = true;
   my.modules.gaming.enable = true;
   my.modules.windowsApps.enable = true;
