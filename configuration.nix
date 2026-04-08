@@ -2,11 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, hostName, hostPath, primaryUser, ... }:
+{ config, lib, pkgs, hostName, hostPath, hostUsers, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./hosts/default.nix
+      (hostPath + "/default.nix")
       (hostPath + "/hardware.nix")
       ./modules/development.nix
       ./modules/gaming.nix
@@ -90,16 +92,20 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${primaryUser} = {
-    isNormalUser = true;
-    description = primaryUser;
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kitty
-    #  thunderbird
-    ];
-  };
+  assertions = [
+    {
+      assertion = builtins.length (builtins.attrNames hostUsers) > 0;
+      message = "At least one user must be defined for this host in flake.nix.";
+    }
+  ];
+
+  users.users = lib.mapAttrs
+    (userName: userCfg: {
+      isNormalUser = true;
+      description = userCfg.fullName or userName;
+      extraGroups = userCfg.extraGroups or [ "networkmanager" "wheel" ];
+    })
+    hostUsers;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -123,6 +129,7 @@
       hyprland
       hyprlock
       hypridle
+        kitty
       kdePackages.dolphin
       #  wget
   ];
