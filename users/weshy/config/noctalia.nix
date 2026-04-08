@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, userConfig, ... }:
 
 {
   # Configure noctalia-shell with all settings persisted from cool.json
@@ -193,7 +193,7 @@
       };
       
       general = {
-        avatarImage = "/home/weshy/.face";
+        avatarImage = "${config.home.homeDirectory}/.face";
         dimmerOpacity = 0.2;
         showScreenCorners = false;
         forceBlackScreenCorners = false;
@@ -294,7 +294,7 @@
       wallpaper = {
         enabled = true;
         overviewEnabled = false;
-        directory = "/home/weshy/media/pics/wallpaper";
+        directory = userConfig.wallpaperDirectory or "${config.home.homeDirectory}/media/pics/wallpaper";
         monitorDirectories = [ ];
         enableMultiMonitorDirectories = false;
         showHiddenFiles = false;

@@ -22,15 +22,17 @@
       hosts = {
         aspire = {
           system = "x86_64-linux";
-          userNames = [ "weshy" ];
+          users = {
+            weshy = {
+              fullName = "weshy";
+              gitName = "yungztrunks";
+              gitEmail = "95880628+yungztrunks@users.noreply.github.com";
+              wallpaperDirectory = "/home/weshy/media/pics/wallpaper";
+              homeModule = ./users/weshy/default.nix;
+              extraGroups = [ "networkmanager" "wheel" ];
+            };
+          };
         };
-
-        # Example ARM machine. Enable it once `./home/arm-laptop` exists.
-        # arm-laptop = {
-        #   enabled = false;
-        #   system = "aarch64-linux";
-        #   userNames = [ "weshy" ];
-        # };
       };
 
       enabledHosts = nixpkgs.lib.filterAttrs (_: hostCfg: hostCfg.enabled or true) hosts;
@@ -40,8 +42,9 @@
           system = hostCfg.system;
           specialArgs = {
             inherit hostName;
-            hostPath = ./home/${hostName};
-            primaryUser = builtins.head hostCfg.userNames;
+            hostPath = ./hosts/${hostName};
+            hostUsers = hostCfg.users;
+            primaryUser = builtins.head (builtins.attrNames hostCfg.users);
           };
           modules = [
             ./configuration.nix
@@ -51,9 +54,8 @@
                 noctalia.homeModules.default
               ];
             }
-            (import ./home {
-              inherit hostName;
-              userNames = hostCfg.userNames;
+            (import ./users {
+              users = hostCfg.users;
             })
           ];
         };
