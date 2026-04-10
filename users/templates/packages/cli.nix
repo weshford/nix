@@ -1,5 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  # CLI package placeholder.
+  home.packages = with pkgs; [
+    htop
+    yazi
+  ];
 }

@@ -1,5 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  # Apps package placeholder.
+  home.packages = with pkgs; [
+    firefox
+  ];
 }
