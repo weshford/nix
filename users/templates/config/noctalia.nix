@@ -1,5 +1,11 @@
-{ ... }:
+{ lib, osConfig, ... }:
 
-{
-  # Noctalia config placeholder - would 10/10 recommend using noctalia when hyprland / niri is active! 
+let
+  useNoctalia =
+    (osConfig.programs.hyprland.enable or false) || (osConfig.programs.niri.enable or false);
+in
+lib.mkIf useNoctalia {
+  programs.noctalia-shell = {
+    enable = true;
+  };
 }
