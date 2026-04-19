@@ -5,7 +5,7 @@
   my.modules.desktopSpecialisations = {
     baseDesktop = "hyprland";
     buildHyprland = true;
-    buildNiri = true;
+    buildNiri = false;
     buildKde = false;
   };
 
