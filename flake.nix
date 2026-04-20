@@ -34,7 +34,7 @@
       users = {
         weshy = {
           fullName = "weshy";
-          gitName = "weshford";
+          gitName = "*weshford";
           gitEmail = "95880628+weshford@users.noreply.github.com";
           homeModule = ./users/weshy/default.nix;
           extraGroups = [ "networkmanager" "wheel" ];
