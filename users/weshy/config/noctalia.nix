@@ -323,7 +323,7 @@ lib.mkIf useNoctalia {
       wallpaper = {
         enabled = true;
         overviewEnabled = false;
-        directory = userConfig.wallpaperDirectory or "${config.home.homeDirectory}/media/pics/wallpaper";
+        directory = userConfig.wallpaperDirectory or "${config.home.homeDirectory}/Pictures/wallpaper";
         monitorDirectories = [ ];
         enableMultiMonitorDirectories = false;
         showHiddenFiles = false;
