@@ -2,7 +2,7 @@
 
 let
   syncDriveLinks = pkgs.writeShellApplication {
-    name = "sync-windows-drive-links";
+    name = "drive-letter-mount-sync";
     runtimeInputs = [
       pkgs.coreutils
       pkgs.findutils
@@ -12,7 +12,7 @@ let
 
       home_dir="$HOME"
       media_root="/run/media/$USER"
-      directory_marker="
+      directory_marker="# managed-by-drive-letter-mount-sync"
       directory_icon="folder-violet"
 
       ensure_kde_directory_style() {
