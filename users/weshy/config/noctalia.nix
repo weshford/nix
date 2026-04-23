@@ -127,10 +127,13 @@ lib.mkIf useNoctalia {
           ];
           right = [
             {
-              blacklist = [];
+              blacklist = [
+                "udiskie"
+                # "andere"
+              ];
               chevronColor = "none";
               colorizeIcon = false;
-              drawerEnable = true;
+              drawerEnable = false;
               hidePassive = false;
               id = "Tray";
               pinned = [];
@@ -148,11 +151,11 @@ lib.mkIf useNoctalia {
               id = "plugin:privacy-indicator";
             }
             {
-              capsLockIcon = "square-letter-c";
+              capsLockIcon = "letter-c";
               hideWhenOff = false;
               id = "LockKeys";
-              numLockIcon = "square-letter-n";
-              scrollLockIcon = "square-letter-s";
+              numLockIcon = "letter-n";
+              scrollLockIcon = "letter-s";
               showCapsLock = true;
               showNumLock = true;
               showScrollLock = true;
