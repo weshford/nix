@@ -323,7 +323,7 @@ lib.mkIf useNoctalia {
       wallpaper = {
         enabled = true;
         overviewEnabled = false;
-        directory = userConfig.wallpaperDirectory or "${config.home.homeDirectory}/Pictures/wallpaper";
+        directory = userConfig.wallpaperDirectory or "${config.home.homeDirectory}/media/pics/wallpaper";
         monitorDirectories = [ ];
         enableMultiMonitorDirectories = false;
         showHiddenFiles = false;
@@ -401,8 +401,17 @@ lib.mkIf useNoctalia {
         diskPath = "/";
         shortcuts = {
           left = [
-            { id = "Network"; }
-            { id = "Bluetooth"; }
+            {
+              id = "plugin:monitor-layout";
+              defaultSettings = {
+                backend = "auto";
+                gridSize = 40;
+                hyprctlCommand = "hyprctl";
+                iconColor = "primary";
+                snapToGrid = true;
+                swayCommand = "swaymsg";
+              };
+            }
             { id = "WallpaperSelector"; }
             { id = "NoctaliaPerformance"; }
           ];
