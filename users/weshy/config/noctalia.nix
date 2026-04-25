@@ -152,7 +152,7 @@ lib.mkIf useNoctalia {
             }
             {
               capsLockIcon = "letter-c";
-              hideWhenOff = false;
+              hideWhenOff = true;
               id = "LockKeys";
               numLockIcon = "letter-n";
               scrollLockIcon = "letter-s";
