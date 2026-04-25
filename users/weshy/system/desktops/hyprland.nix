@@ -66,7 +66,7 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
           "hyprbars-button" = [
             "rgb(ff5f57),13,,hyprctl dispatch killactive,rgb(1c1c1e)"
             "rgb(febc2e),13,,hyprctl dispatch fullscreen 1,rgb(1c1c1e)"
-            "rgb(28c840),13,,hyprctl dispatch togglefloating; hyprctl dispatch resizeactive exact 88% 88%,rgb(1c1c1e)"
+            "rgb(28c840),13,,hyprctl dispatch togglefloating; hyprctl dispatch resizeactive exact 66% 66%,rgb(1c1c1e)"
           ];
           on_double_click = "hyprctl dispatch fullscreen 1";
         };
