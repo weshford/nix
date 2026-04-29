@@ -121,6 +121,7 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
 
         # wichtig
         "$mod, E, exec, dolphin"
+        "$mod SHIFT, S, exec, $ipc plugin:screen-toolkit annotate"
 
         # Zoom
         # "binde = $mod, equal, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')"
