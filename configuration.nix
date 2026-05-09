@@ -10,11 +10,13 @@
       ./hosts/default.nix
       (hostPath + "/default.nix")
       (hostPath + "/hardware.nix")
+      (hostPath + "/gpu.nix")
       ./modules/development.nix
       ./modules/desktop-specialisations.nix
       ./modules/gaming.nix
       ./modules/windows-apps.nix
       ./modules/alias.nix
+      ./modules/basics.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -98,20 +100,11 @@
   my.modules.gaming.enable = true;
   my.modules.windowsApps.enable = true;
   my.modules.shellAliases.enable = true;
+  my.modules.basics.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-      # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      wayland-utils
-      wl-clipboard
-      kitty
-      xfce.thunar
-      kdePackages.ark
-      kdePackages.partitionmanager
-      kdePackages.kate
-      #  wget
-  ];
+  # note: moved to /modules/basics.nix
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
