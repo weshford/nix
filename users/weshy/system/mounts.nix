@@ -94,30 +94,31 @@ in
     };
   };
 
-  systemd.user.services.windows-drive-links = {
-    Unit = {
-      Description = "Mirror removable drives as Windows-style links in home";
-    };
-    Service = {
-      Type = "oneshot";
-      ExecStart = "${syncDriveLinks}/bin/sync-windows-drive-links";
-    };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-  };
+  # rclone (disabled)
+  # systemd.user.services.windows-drive-links = {
+  #   Unit = {
+  #     Description = "Mirror removable drives as Windows-style links in home";
+  #   };
+  #   Service = {
+  #     Type = "oneshot";
+  #     ExecStart = "${syncDriveLinks}/bin/sync-windows-drive-links";
+  #   };
+  #   Install = {
+  #     WantedBy = [ "default.target" ];
+  #   };
+  # };
 
-  systemd.user.timers.windows-drive-links = {
-    Unit = {
-      Description = "Refresh Windows-style drive links in home";
-    };
-    Timer = {
-      OnBootSec = "5s";
-      OnUnitActiveSec = "5s";
-      Unit = "windows-drive-links.service";
-    };
-    Install = {
-      WantedBy = [ "timers.target" ];
-    };
-  };
+  # systemd.user.timers.windows-drive-links = {
+  #   Unit = {
+  #     Description = "Refresh Windows-style drive links in home";
+  #   };
+  #   Timer = {
+  #     OnBootSec = "5s";
+  #     OnUnitActiveSec = "5s";
+  #     Unit = "windows-drive-links.service";
+  #   };
+  #   Install = {
+  #     WantedBy = [ "timers.target" ];
+  #   };
+  # };
 }
