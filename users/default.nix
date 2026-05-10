@@ -1,4 +1,4 @@
-{ users ? { }, hyprbarsPluginPackage ? null }: # temporary
+{ users ? { }, hyprbarsPluginPackage ? null, spicetifyPkgs ? null }: # temporary
 
 { config, ... }:
 
@@ -24,6 +24,7 @@
         imports = [ resolvedUserCfg.homeModule ];
         _module.args.userConfig = resolvedUserCfg;
         _module.args.hyprbarsPluginPackage = hyprbarsPluginPackage; # temporary
+        _module.args.spicetifyPkgs = spicetifyPkgs;
       })
     users;
 }

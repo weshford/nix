@@ -29,9 +29,13 @@
       url = "github:schembriaiden/helium-browser-nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nixpkgs-hyprland-plugins-fix, home-manager, hyprland, noctalia, nix-index-database, helium, sops-nix, ... }:
+  outputs = { nixpkgs, nixpkgs-hyprland-plugins-fix, home-manager, hyprland, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, ... }:
     let
       lib = nixpkgs.lib;
 
@@ -98,12 +102,14 @@
             {
               home-manager.sharedModules = [
                 noctalia.homeModules.default
+                spicetify-nix.homeManagerModules.default
                 sops-nix.homeManagerModules.sops
               ];
             }
             (import ./users {
               users = hostUsers;
               inherit hyprbarsPluginPackage;
+              spicetifyPkgs = spicetify-nix.legacyPackages.${hostCfg.system};
             })
           ];
         };
