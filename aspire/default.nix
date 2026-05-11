@@ -1,13 +1,12 @@
 { ... }:
 
 {
-  # Host-specific desktop selection controls.
-  my.modules.desktopSpecialisations = {
-    baseDesktop = "hyprland";
-    buildHyprland = true;
-    buildNiri = false;
-    buildKde = false;
+  services.displayManager.ly.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
   };
+  security.pam.services.hyprlock = { };
 
   # Host-specific multimedia stack.
   services.pulseaudio.enable = false;
@@ -22,4 +21,6 @@
   hardware.bluetooth.enable = true;
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
+
+  networking.networkmanager.enable = true;
 }
