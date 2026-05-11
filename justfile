@@ -1,27 +1,25 @@
 set shell := ["bash", "-cu"]
 
+HOST := "aspire"
+
 default:
     @just --list
 
-# Rebuild and switch to the active generation for a host.
-switch host=`hostname`:
-    sudo nixos-rebuild switch --flake .#{{host}}
+# Rebuild and switch to the active generation.
+switch:
+    sudo nixos-rebuild switch --flake .#{{HOST}}
 
-# Rebuild in test mode for a host.
-test host=`hostname`:
-    sudo nixos-rebuild test --flake .#{{host}}
+# Rebuild in test mode.
+test:
+    sudo nixos-rebuild test --flake .#{{HOST}}
 
-# Build and register as next boot generation for a host.
-boot host=`hostname`:
-    sudo nixos-rebuild boot --flake .#{{host}}
+# Build and register as next boot generation.
+boot:
+    sudo nixos-rebuild boot --flake .#{{HOST}}
 
 # Build the system configuration without switching.
-build host=`hostname`:
-    sudo nixos-rebuild build --flake .#{{host}}
-
-# Wrapper around scripts/rebuild.sh with action + host arguments.
-rebuild action="switch" host=`hostname`:
-    bash scripts/rebuild.sh {{action}} {{host}}
+build:
+    sudo nixos-rebuild build --flake .#{{HOST}}
 
 # Update flake inputs and lock file.
 update:
@@ -61,17 +59,9 @@ hook-run:
 hook-update:
     pre-commit autoupdate
 
-# Generate host hardware.nix from current machine.
-generate-hardware host:
-    bash scripts/generate-hardware.sh {{host}}
-
-# Build an install ISO from a flake host output.
-build-iso host:
-    bash scripts/build-iso.sh {{host}}
-
-# Verify required commands and base prerequisites.
-check-prerequisites:
-    bash scripts/check-prerequisites.sh
+# Build an install ISO from the flake host output.
+build-iso:
+    bash scripts/build-iso.sh
 
 # SOPS: generate an age key under ~/.config/sops/age/keys.txt
 sops-generate-agekey:
@@ -89,18 +79,6 @@ sops-edit:
 # SOPS: re-encrypt with updated keys
 sops-updatekeys:
     nix shell nixpkgs#sops -c sops updatekeys secrets/secrets.yaml
-
-# Detect hardware profile summary.
-detect-hardware:
-    bash scripts/detect-hardware.sh
-
-# Run host + user scaffold quick setup.
-quick-setup host user:
-    bash scripts/quick-setup.sh {{host}} {{user}}
-
-# Interactive setup wizard.
-setup-wizard:
-    bash scripts/nixos-setup.sh
 
 # Interactive nix garbage collection helper.
 garbagecollect:
