@@ -1,8 +1,7 @@
 { pkgs, config, userConfig, lib, osConfig, ... }:
 
 let
-  useNoctalia =
-    (osConfig.programs.hyprland.enable or false) || (osConfig.programs.niri.enable or false);
+  useNoctalia = osConfig.programs.hyprland.enable or false;
 in
 
 lib.mkIf useNoctalia {
@@ -456,7 +455,7 @@ lib.mkIf useNoctalia {
         useCustomColors = false;
         warningColor = "";
         criticalColor = "";
-        externalMonitor = "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor";
+        externalMonitor = "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor";
       };
       
       noctaliaPerformance = {
