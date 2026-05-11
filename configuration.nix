@@ -2,17 +2,15 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, hostName, hostPath, hostUsers, ... }:
+{ config, lib, userConfig, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hosts/default.nix
-      (hostPath + "/default.nix")
-      (hostPath + "/hardware.nix")
-      (hostPath + "/gpu.nix")
+      ./aspire/default.nix
+      ./aspire/hardware.nix
+      ./aspire/gpu.nix
       ./modules/development.nix
-      ./modules/desktop-specialisations.nix
       ./modules/gaming.nix
       ./modules/windows-apps.nix
       ./modules/alias.nix
@@ -26,7 +24,7 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = lib.mkDefault hostName; # Define your hostname.
+  networking.hostName = "aspire"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -69,20 +67,11 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  assertions = [
-    {
-      assertion = builtins.length (builtins.attrNames hostUsers) > 0;
-      message = "At least one user must be defined for this host in flake.nix.";
-    }
-  ];
-
-  users.users = lib.mapAttrs
-    (userName: userCfg: {
-      isNormalUser = true;
-      description = userCfg.fullName or userName;
-      extraGroups = userCfg.extraGroups or [ "networkmanager" "wheel" ];
-    })
-    hostUsers;
+  users.users.${userConfig.username} = {
+    isNormalUser = true;
+    description = userConfig.fullName or userConfig.username;
+    extraGroups = userConfig.extraGroups or [ "networkmanager" "wheel" ];
+  };
 
   environment.pathsToLink = [
     "/share/applications"
@@ -96,7 +85,6 @@
   # systemd.services.display-manager.restartIfChanged = false;
 
   my.modules.develop.enable = true;
-  my.modules.desktopSpecialisations.enable = true;
   my.modules.gaming.enable = true;
   my.modules.windowsApps.enable = true;
   my.modules.shellAliases.enable = true;
