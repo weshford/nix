@@ -61,14 +61,6 @@ hook-run:
 hook-update:
     pre-commit autoupdate
 
-# Scaffold a new host directory from templates.
-generate-host host system="x86_64-linux":
-    bash scripts/generate-host.sh {{host}} {{system}}
-
-# Scaffold a new user directory from templates.
-generate-user user:
-    bash scripts/generate-user.sh {{user}}
-
 # Generate host hardware.nix from current machine.
 generate-hardware host:
     bash scripts/generate-hardware.sh {{host}}
@@ -101,10 +93,6 @@ sops-updatekeys:
 # Detect hardware profile summary.
 detect-hardware:
     bash scripts/detect-hardware.sh
-
-# Validate template files exist and parse correctly.
-validate-templates:
-    bash scripts/validate-templates.sh
 
 # Run host + user scaffold quick setup.
 quick-setup host user:
