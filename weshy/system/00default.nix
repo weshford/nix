@@ -8,5 +8,7 @@
     ./mounts.nix
     ./rclone.nix
     ./defaults.nix
+    ./hyprland.nix
+    ./wayland-common.nix
   ];
 }
