@@ -5,22 +5,6 @@ HOST := "aspire"
 default:
     @just --list
 
-# Rebuild and switch to the active generation.
-switch:
-    sudo nixos-rebuild switch --flake .#{{HOST}}
-
-# Rebuild in test mode.
-test:
-    sudo nixos-rebuild test --flake .#{{HOST}}
-
-# Build and register as next boot generation.
-boot:
-    sudo nixos-rebuild boot --flake .#{{HOST}}
-
-# Build the system configuration without switching.
-build:
-    sudo nixos-rebuild build --flake .#{{HOST}}
-
 # Update flake inputs and lock file.
 update:
     nix flake update
@@ -46,18 +30,6 @@ quality:
     just flake-check
     just lint
     just dead-code-check
-
-# Install pre-commit hooks.
-hook-setup:
-    pre-commit install
-
-# Run pre-commit on all files.
-hook-run:
-    pre-commit run --all-files
-
-# Update pre-commit hook versions.
-hook-update:
-    pre-commit autoupdate
 
 # Build an install ISO from the flake host output.
 build-iso:
