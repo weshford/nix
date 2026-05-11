@@ -10,11 +10,11 @@ update:
     nix flake update
 
 # Evaluate flake checks without building derivations.
-flake-check:
+check-flake:
     nix flake check --no-build --accept-flake-config
 
 # Format Nix files.
-fmt:
+format:
     nix fmt .
 
 # Run statix lints.
@@ -22,11 +22,11 @@ lint:
     nix run nixpkgs#statix -- check .
 
 # Detect dead Nix code.
-dead-code-check:
+check-dead-code:
     nix run nixpkgs#deadnix -- --fail .
 
 # Run all quality checks.
-quality:
+check-all:
     just flake-check
     just lint
     just dead-code-check
