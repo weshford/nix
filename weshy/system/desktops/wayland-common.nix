@@ -1,11 +1,6 @@
 { lib, osConfig, pkgs, ... }:
 
-let
-  isWaylandDesktop =
-    (osConfig.programs.hyprland.enable or false)
-    || (osConfig.programs.niri.enable or false);
-in
-lib.mkIf isWaylandDesktop {
+lib.mkIf (osConfig.programs.hyprland.enable or false) {
   gtk = {
     enable = true;
     theme = {
