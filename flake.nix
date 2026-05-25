@@ -102,7 +102,7 @@
                 #   Issue: https://github.com/NixOS/nixpkgs/issues/516392 (CLOSED, links to PR)
                 #   Fix:   https://github.com/NixOS/nixpkgs/pull/516445   (OPEN as of 2026-05-05)
                 # TODO: Drop this once unstable fixes. temporary fix only!
-                openldap = super.openldap.overrideAttrs (old: {
+                openldap = prev.openldap.overrideAttrs (old: {
                   preCheck = (old.preCheck or "") + ''
                     rm -f tests/scripts/test017-syncreplication-refresh
                   '';
