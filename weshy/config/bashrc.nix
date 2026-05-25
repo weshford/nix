@@ -9,7 +9,7 @@
       fi
 
       pythondevelop() {
-        local version="${1:-3.12}"
+        local version="''${1:-3.12}"
         if ! command -v uv >/dev/null 2>&1; then
           echo "uv is not installed." >&2
           return 1
