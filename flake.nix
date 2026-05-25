@@ -113,10 +113,12 @@
                 # ("Please submit a full bug report"). Triggered by aggressive hardening
                 # flags on complex C++ code. Disabling stack protector works around the ICE.
                 #   Error snippet: gt_ggc_mx_lang_tree_node internal error during compilation
-                # Drop this override once GCC fix propagates to unstable.
+                # TODO: Drop this override once GCC fix propagates to unstable.
                 obs-studio = prev.obs-studio.overrideAttrs (old: {
                   hardeningDisable = (old.hardeningDisable or []) ++ [ "stackprotector" ];
                 });
+
+                #TODO: out of memory issue ..
               })
             ];
           }
