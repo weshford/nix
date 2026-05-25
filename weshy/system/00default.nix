@@ -1,0 +1,13 @@
+{ ... }:
+
+{
+  imports = [
+    ./cursor.nix
+    ./secrets.nix
+    ./mounts.nix
+    ./rclone.nix
+    ./defaults.nix
+    ./hyprland.nix
+    ./wayland-common.nix
+  ];
+}

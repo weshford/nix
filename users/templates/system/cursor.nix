@@ -1,5 +1,0 @@
-{ ... }:
-
-{
-  # Cursor config placeholder.
-}

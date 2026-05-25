@@ -2,13 +2,7 @@
 
 set -euo pipefail
 
-HOST_NAME="${1:-}"
-
-if [[ -z "${HOST_NAME}" ]]; then
-  echo "Usage: $0 <host-name>"
-  echo "Example: $0 aspire"
-  exit 1
-fi
+HOST_NAME="aspire"
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUTPUT_DIR="${ROOT_DIR}/result/iso-${HOST_NAME}"
