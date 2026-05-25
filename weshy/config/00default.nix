@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./bashrc.nix
+    ./fonts.nix
     ./git.nix
     ./helium.nix
     ./kitty.nix
