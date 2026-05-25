@@ -32,6 +32,12 @@ in
 
       # random
       "cls" = "clear";
+
+      # dev shells
+      # - pythondevelop [version]: uses uv, creates .venv, activates it (see bashrc.nix)
+      "nodedevelop" = "nix shell nixpkgs#fnm"; # bashrc.nix for init fnm
+      "rustdevelop" = "nix shell nixpkgs#rustc nixpkgs#cargo nixpkgs#rust-analyzer nixpkgs#rustfmt nixpkgs#clippy";
+
     };
   };
 }
