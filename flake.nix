@@ -89,8 +89,7 @@
             nixpkgs.overlays = [
               (final: prev: {
                 helium = helium.packages.${prev.system}.default;
-
-
+                
                 # openldap-2.6.13: the syncreplication tests are timing-sensitive and fail
                 # on slow / sandboxed builders ("provider and consumer databases differ").
                 # First test017 fell over, then surgically skipping it just exposed the

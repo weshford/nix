@@ -343,7 +343,7 @@ lib.mkIf useNoctalia {
         transitionType = [
           # "fade"
           # "disc"
-          "stripes"
+          # "stripes"
           # "wipe"
           "pixelate"
           # "honeycomb"
