@@ -2,6 +2,7 @@
   "nodes": {
     "apple-fonts-nix": {
       "inputs": {
+        "ci": "ci",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -15,16 +16,64 @@
         "sf-pro": "sf-pro"
       },
       "locked": {
-        "lastModified": 1777376912,
-        "narHash": "sha256-aLvNGToDh5g3Lm2NoTPN3ifYLxlCs3yF7qO3qZ1X46s=",
+        "lastModified": 1779851139,
+        "narHash": "sha256-MbveJ0ka8bAIAXHXPEoQ5xnDDejeu1ptuBpNwQSPER8=",
         "owner": "Lyndeno",
         "repo": "apple-fonts.nix",
-        "rev": "746df8b060c2f16080ea2faf502fee652b733047",
+        "rev": "e593ac862763f1863359d066f0b1032b180ec993",
         "type": "github"
       },
       "original": {
         "owner": "Lyndeno",
         "repo": "apple-fonts.nix",
+        "type": "github"
+      }
+    },
+    "blueprint": {
+      "inputs": {
+        "nixpkgs": [
+          "apple-fonts-nix",
+          "ci",
+          "nixpkgs"
+        ],
+        "systems": [
+          "apple-fonts-nix",
+          "ci"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776249299,
+        "narHash": "sha256-Dt9t1TGRmJFc0xVYhttNBD6QsAgHOHCArqGa0AyjrJY=",
+        "owner": "numtide",
+        "repo": "blueprint",
+        "rev": "56131e8628f173d24a27f6d27c0215eff57e40dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "blueprint",
+        "type": "github"
+      }
+    },
+    "ci": {
+      "inputs": {
+        "blueprint": "blueprint",
+        "nixpkgs": [
+          "apple-fonts-nix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779849193,
+        "narHash": "sha256-Bc80n+fA3NtxqYHWcdb1XFuYLaV+yX2xnvDRnwAv4ak=",
+        "owner": "Lyndeno",
+        "repo": "ci",
+        "rev": "38cfa6f01bdaf91bc4ce44176b322bab2bb208a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Lyndeno",
+        "repo": "ci",
         "type": "github"
       }
     },
@@ -36,11 +85,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1778054244,
-        "narHash": "sha256-4yvin6Bm8MxAlAr7QCNSDFQz9WCzBltW+lYdGt1vsv4=",
+        "lastModified": 1780027711,
+        "narHash": "sha256-i74IUAuKPSQJUl8CN4XZZEyCs8g0lg0oJCrW7QFYOTQ=",
         "owner": "schembriaiden",
         "repo": "helium-browser-nix-flake",
-        "rev": "b2790d366bbafa7cd01984a8c7eabe73fe10fd41",
+        "rev": "c6364929cb9a7fe155195a75bcb6fa2433af6f75",
         "type": "github"
       },
       "original": {
@@ -130,11 +179,11 @@
         "noctalia-qs": "noctalia-qs"
       },
       "locked": {
-        "lastModified": 1778985886,
-        "narHash": "sha256-eI7Vv6sWHxUnkOH3f7TBUzMhJIeVTi4A9tUk3+DfR08=",
+        "lastModified": 1779763713,
+        "narHash": "sha256-as2Vo4PitnWfXezfkQB2H3Rsr/DXJPp4Oe+dE+dZ0Xo=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "aecc6c4db35bf4bee10ab63a4acee784ff21992a",
+        "rev": "272cd91408b5ff6e329e6397eed042fe422069e7",
         "type": "github"
       },
       "original": {
@@ -303,11 +352,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1778395012,
-        "narHash": "sha256-A/VRiNFQIwGp8cOC/8yNCRexFHjtFCzBwhajrkyGojo=",
+        "lastModified": 1779824049,
+        "narHash": "sha256-dWHVUjP03KSVG1PaLKA6j9EdxWSxSQvipMUIcSyuA/U=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "3b4991bfc064c3361957f23141351ae2d9833234",
+        "rev": "1362178e5f5f7a848c49fe9dee004ef8824f100a",
         "type": "github"
       },
       "original": {
