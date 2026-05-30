@@ -3,8 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # temporary! until a patch for hyprplugins is available; currently builds fail bzw. dependencies are wrong
-    nixpkgs-hyprland-plugins-fix.url = "github:NixOS/nixpkgs/231ea250eee538df1b939ca7899e0e80e7bcb08c";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,7 +33,7 @@
     };
   };
 
-  outputs = { nixpkgs, nixpkgs-hyprland-plugins-fix, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, ... }:
+  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -48,7 +46,7 @@
         extraGroups = [ "networkmanager" "wheel" ];
       };
 
-      hyprbarsPluginPackage = nixpkgs-hyprland-plugins-fix.legacyPackages.${system}.hyprlandPlugins.hyprbars;
+      hyprbarsPluginPackage = nixpkgs.legacyPackages.${system}.hyprlandPlugins.hyprbars;
 
       mkDevShell = system:
         let
