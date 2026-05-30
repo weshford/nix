@@ -40,7 +40,7 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
       };
 
       dwindle = {
-        pseudotile = true;
+        # pseudotile = true;
         preserve_split = true;
       };
 
