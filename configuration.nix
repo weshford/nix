@@ -63,9 +63,24 @@
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;
+  services.earlyoom.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
+  };
+
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 16 * 1024;
+    priority = 10;
+  }];
+
+  boot.initrd.systemd.enable = true;
 
   users.users.${userConfig.username} = {
     isNormalUser = true;
