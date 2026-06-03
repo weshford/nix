@@ -48,33 +48,8 @@
 
       hyprbarsPluginPackage = nixpkgs.legacyPackages.${system}.hyprlandPlugins.hyprbars;
 
-      mkDevShell = system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        pkgs.mkShell {
-          packages = with pkgs; [
-            git
-            just
-            nixfmt-rfc-style
-            statix
-            deadnix
-            nil
-            nixd
-            python3
-            uv
-            neovim
-          ];
-        };
-
     in
     {
-      devShells = {
-        ${system} = {
-          default = mkDevShell system;
-        };
-      };
-
       nixosConfigurations.aspire = lib.nixosSystem {
         system = system;
         specialArgs = {
