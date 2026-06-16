@@ -61,7 +61,7 @@ in
     tray = "auto";
     settings = {
       program_options = {
-        file_manager = "${pkgs.xfce.thunar}/bin/thunar";
+        file_manager = "${pkgs.kdePackages.dolphin}/bin/dolphin";
       };
     };
   };

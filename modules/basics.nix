@@ -12,7 +12,7 @@ in
       wayland-utils
       wl-clipboard
       kitty
-      xfce.thunar
+      kdePackages.dolphin
       kdePackages.ark
       kdePackages.partitionmanager
       kdePackages.kate

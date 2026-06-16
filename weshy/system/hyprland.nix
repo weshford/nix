@@ -127,7 +127,7 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
         ", XF86PowerOff, exec, $ipc sessionMenu toggle"
 
         # wichtig
-        "$mod, E, exec, thunar"
+        "$mod, E, exec, dolphin"
         "$mod SHIFT, S, exec, $ipc plugin:screen-toolkit annotate"
 
         # Zoom

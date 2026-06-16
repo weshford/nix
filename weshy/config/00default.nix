@@ -6,6 +6,7 @@
     ./git.nix
     ./helium.nix
     ./kitty.nix
+    ./dolphin.nix
     ./neovim.nix
     ./spicetify.nix
     ./noctalia.nix
