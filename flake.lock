@@ -236,6 +236,7 @@
         "apple-fonts-nix": "apple-fonts-nix",
         "helium": "helium",
         "home-manager": "home-manager",
+        "luffy": "luffy",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
