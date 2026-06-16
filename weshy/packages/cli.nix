@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     htop
     fd
+    fzf
     ripgrep
     eza
     btop
@@ -13,5 +14,6 @@
     zip
     p7zip
     ffmpeg
+    yt-dlp
   ];
 }

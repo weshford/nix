@@ -10,5 +10,8 @@
     discord
     qbittorrent
     qdirstat
+    mpv
+    chafa
+    libsixel
   ];
 }
