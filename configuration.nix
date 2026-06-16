@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./aspire/default.nix
+      ./aspire/displaylink.nix
       ./aspire/hardware.nix
       ./aspire/gpu.nix
       ./modules/development.nix

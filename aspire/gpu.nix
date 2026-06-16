@@ -4,8 +4,7 @@
   # Keep nouveau from loading so NVIDIA can bind the device.
   boot.blacklistedKernelModules = [ "nouveau" ];
 
-  # Ensure NVIDIA driver packages are included, even on Wayland.
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "nvidia" "displaylink" ];
 
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;
