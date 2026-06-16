@@ -95,6 +95,10 @@ lib.mkIf useNoctalia {
               id = "plugin:usb-drive-manager";
             }
             {
+              defaultSettings = {};
+              id = "plugin:workspace-overview";
+            }
+            {
               characterCount = 2;
               colorizeIcons = false;
               emptyColor = "tertiary";
