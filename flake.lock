@@ -119,6 +119,26 @@
         "type": "github"
       }
     },
+    "luffy": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779445240,
+        "narHash": "sha256-n8FboCuTQC0OBFYQB1nLEimoEUr8m1bfRtnu+tqNe7E=",
+        "owner": "DemonKingSwarn",
+        "repo": "luffy",
+        "rev": "888d3237cbee8642187cda237262e084738f5076",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DemonKingSwarn",
+        "repo": "luffy",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
