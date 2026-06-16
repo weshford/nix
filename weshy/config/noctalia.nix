@@ -29,7 +29,11 @@ lib.mkIf useNoctalia {
       bar = {
         barType = "simple";
         position = "top";
-        monitors = [ ];
+        monitors = [
+          "eDP-1"
+          "DVI-I-1"
+          "DVI-I-2"
+        ];
         density = "default";
         showOutline = false;
         showCapsule = true;

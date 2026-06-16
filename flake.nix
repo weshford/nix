@@ -31,9 +31,13 @@
       url = "github:Lyndeno/apple-fonts.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    luffy = {
+      url = "github:DemonKingSwarn/luffy";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, ... }:
+  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, luffy, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -62,7 +66,8 @@
             nixpkgs.overlays = [
               (final: prev: {
                 helium = helium.packages.${prev.system}.default;
-                
+                luffy = luffy.packages.${prev.system}.default;
+
                 # openldap-2.6.13: the syncreplication tests are timing-sensitive and fail
                 # on slow / sandboxed builders ("provider and consumer databases differ").
                 # First test017 fell over, then surgically skipping it just exposed the

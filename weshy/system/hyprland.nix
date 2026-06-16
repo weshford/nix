@@ -13,7 +13,12 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
         "XCURSOR_PATH,${config.home.homeDirectory}/.icons:${config.home.homeDirectory}/.local/share/icons:/usr/share/icons"
       ];
 
-      monitor = ",preferred,auto,1.0";
+      monitor = [
+        "eDP-1,1920x1080@60.02,2200x840,1"
+        "DVI-I-1,1920x1080@100,3160x-240,1"
+        "DVI-I-2,1920x1080@100,1240x-240,1"
+        " ,preferred,auto,1"
+      ];
 
       general = {
         gaps_in = 5;
@@ -73,6 +78,8 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
       };
 
       exec-once = [
+        # ''sh -lc "external_monitor=$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\"^(eDP|LVDS)\") | not) | .name' | head -n1); if [ -n \"$external_monitor\" ]; then for workspace in 1 2 3 4 5 6 7 8 9 10; do hyprctl keyword workspace \"$workspace,monitor:$external_monitor\"; done; fi"''
+        "sh -lc \"external_monitor=\$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\\\"^(eDP|LVDS|DSI)\\\") | not) | .name' | head -n1); lid_state_file=\$(find /proc/acpi/button/lid -name state -print -quit 2>/dev/null); if [ -n \\\"\$external_monitor\\\" ] && [ -n \\\"\$lid_state_file\\\" ] && grep -q closed \\\"\$lid_state_file\\\"; then hyprctl keyword monitor \\\"eDP-1,disable\\\"; fi\""
         "noctalia-shell"
       ];
 
@@ -139,6 +146,11 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
         ", XF86AudioPlay, exec, $ipc media playPause"
         ", XF86AudioNext, exec, $ipc media next"
         ", XF86AudioPrev, exec, $ipc media previous"
+      ];
+
+      bindl = [
+        ", switch:on:Lid Switch, exec, sh -lc \"external_monitor=\$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\\\"^(eDP|LVDS|DSI)\\\") | not) | .name' | head -n1); if [ -n \\\"\$external_monitor\\\" ]; then hyprctl keyword monitor \\\"eDP-1,disable\\\"; fi\""
+        ", switch:off:Lid Switch, exec, sh -lc \"external_monitor=\$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\\\"^(eDP|LVDS|DSI)\\\") | not) | .name' | head -n1); if [ -n \\\"\$external_monitor\\\" ]; then hyprctl keyword monitor \\\"eDP-1,1920x1080@60.02,2200x840,1\\\"; fi\""
       ];
 
       # bindl = [
