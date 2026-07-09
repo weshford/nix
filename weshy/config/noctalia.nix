@@ -21,7 +21,7 @@ lib.mkIf useNoctalia {
     translate-shell
   ];
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
     settings = {
       settingsVersion = 59;
