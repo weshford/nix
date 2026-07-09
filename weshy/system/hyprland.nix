@@ -85,7 +85,7 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
 
       "$mod" = "SUPER";
       "$terminal" = "kitty";
-      "$ipc" = "noctalia ipc call";
+      "$ipc" = "noctalia msg";
 
       bind = [
         "$mod, T, exec, $terminal"
