@@ -80,12 +80,12 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
       exec-once = [
         # ''sh -lc "external_monitor=$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\"^(eDP|LVDS)\") | not) | .name' | head -n1); if [ -n \"$external_monitor\" ]; then for workspace in 1 2 3 4 5 6 7 8 9 10; do hyprctl keyword workspace \"$workspace,monitor:$external_monitor\"; done; fi"''
         "sh -lc \"external_monitor=\$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\\\"^(eDP|LVDS|DSI)\\\") | not) | .name' | head -n1); lid_state_file=\$(find /proc/acpi/button/lid -name state -print -quit 2>/dev/null); if [ -n \\\"\$external_monitor\\\" ] && [ -n \\\"\$lid_state_file\\\" ] && grep -q closed \\\"\$lid_state_file\\\"; then hyprctl keyword monitor \\\"eDP-1,disable\\\"; fi\""
-        "noctalia-shell"
+        "noctalia"
       ];
 
       "$mod" = "SUPER";
       "$terminal" = "kitty";
-      "$ipc" = "noctalia-shell ipc call";
+      "$ipc" = "noctalia msg";
 
       bind = [
         "$mod, T, exec, $terminal"
@@ -118,17 +118,18 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
         "$mod SHIFT, 0, movetoworkspace, 10"
 
         # noctlia shell things
-        "$mod SHIFT, H, exec, $ipc wallpaper toggle"
-        "$mod, V, exec, $ipc launcher clipboard"
-        "$mod, I, exec, $ipc settings toggle"
-        "$mod, L, exec, $ipc lockScreen lock"
-        "$mod, R, exec, $ipc launcher command"
-        "ALT, TAB, exec, $ipc launcher windows"
+        "$mod SHIFT, S, exec, $ipc screenshot-region" # TODO: Wait for screentoolkit
+        "$mod SHIFT, H, exec, $ipc panel-toggle wallpaper"
+        "$mod, V, exec, $ipc panel-toggle clipboard"
+        "$mod, I, exec, $ipc settings-open"
+        # "$mod, L, exec, $ipc lockScreen lock" # TODO : später machen wenn ich es testen kann
+        # "$mod, R, exec, $ipc launcher command" # TODO: check if not needed anymore..
+        "ALT, TAB, exec, $ipc window-switcher"
         ", XF86PowerOff, exec, $ipc sessionMenu toggle"
 
         # wichtig
         "$mod, E, exec, dolphin"
-        "$mod SHIFT, S, exec, $ipc plugin:screen-toolkit annotate"
+        # "$mod SHIFT, S, exec, $ipc plugin:screen-toolkit annotate"
 
         # Zoom
         # "binde = $mod, equal, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')"
@@ -137,11 +138,11 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
 
       bindel = [
         # Volume controls
-        ", XF86AudioRaiseVolume, exec, $ipc volume increase"
-        ", XF86AudioLowerVolume, exec, $ipc volume decrease"
+        ", XF86AudioRaiseVolume, exec, $ipc volume-up"
+        ", XF86AudioLowerVolume, exec, $ipc volume-down"
         # Brightness controls
-        ", XF86MonBrightnessUp, exec, $ipc brightness increase"
-        ", XF86MonBrightnessDown, exec, $ipc brightness decrease"
+        ", XF86MonBrightnessUp, exec, $ipc brightness-up"
+        ", XF86MonBrightnessDown, exec, $ipc brightness-down"
         # Media controls
         ", XF86AudioPlay, exec, $ipc media playPause"
         ", XF86AudioNext, exec, $ipc media next"
@@ -151,6 +152,9 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
       bindl = [
         ", switch:on:Lid Switch, exec, sh -lc \"external_monitor=\$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\\\"^(eDP|LVDS|DSI)\\\") | not) | .name' | head -n1); if [ -n \\\"\$external_monitor\\\" ]; then hyprctl keyword monitor \\\"eDP-1,disable\\\"; fi\""
         ", switch:off:Lid Switch, exec, sh -lc \"external_monitor=\$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\\\"^(eDP|LVDS|DSI)\\\") | not) | .name' | head -n1); if [ -n \\\"\$external_monitor\\\" ]; then hyprctl keyword monitor \\\"eDP-1,1920x1080@60.02,2200x840,1\\\"; fi\""
+        # TODO: Abwarten ...
+        # ", switch:on:Lid Switch, exec, $ipc dpms-on"
+        # ", switch:off:Lid Switch, exec, $ipc dpms-off"
       ];
 
       # bindl = [
@@ -165,7 +169,7 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
       ];
 
       bindr = [
-        "$mod, SUPER_L, exec, $ipc launcher toggle"
+        "$mod, SUPER_L, exec, $ipc panel-toggle launcher"
       ];
     };
   };
