@@ -80,12 +80,12 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
       exec-once = [
         # ''sh -lc "external_monitor=$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\"^(eDP|LVDS)\") | not) | .name' | head -n1); if [ -n \"$external_monitor\" ]; then for workspace in 1 2 3 4 5 6 7 8 9 10; do hyprctl keyword workspace \"$workspace,monitor:$external_monitor\"; done; fi"''
         "sh -lc \"external_monitor=\$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\\\"^(eDP|LVDS|DSI)\\\") | not) | .name' | head -n1); lid_state_file=\$(find /proc/acpi/button/lid -name state -print -quit 2>/dev/null); if [ -n \\\"\$external_monitor\\\" ] && [ -n \\\"\$lid_state_file\\\" ] && grep -q closed \\\"\$lid_state_file\\\"; then hyprctl keyword monitor \\\"eDP-1,disable\\\"; fi\""
-        "noctalia-shell"
+        "noctalia"
       ];
 
       "$mod" = "SUPER";
       "$terminal" = "kitty";
-      "$ipc" = "noctalia-shell ipc call";
+      "$ipc" = "noctalia ipc call";
 
       bind = [
         "$mod, T, exec, $terminal"
