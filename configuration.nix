@@ -14,7 +14,6 @@
       ./modules/development.nix
       ./modules/gaming.nix
       ./modules/windows-apps.nix
-      ./modules/flatpak.nix
       ./modules/alias.nix
       ./modules/basics.nix
     ];
@@ -129,7 +128,6 @@
   my.modules.develop.enable = true;
   my.modules.gaming.enable = true;
   my.modules.windowsApps.enable = true;
-  my.modules.flatpak.enable = true;
   my.modules.shellAliases.enable = true;
   my.modules.basics.enable = true;
 
