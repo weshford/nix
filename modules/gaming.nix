@@ -14,6 +14,12 @@ in
 
     programs.gamemode.enable = true;
 
+    services.sunshine = {
+      enable = true;
+      openFirewall = true;
+      capSysAdmin = true;
+    };
+
     environment.systemPackages = with pkgs; [
       mangohud
       chiaki-ng
