@@ -29,6 +29,7 @@
 
     home.username = userConfig.username;
     home.homeDirectory = "/home/${userConfig.username}";
+    home.sessionPath = [ "$HOME/.local/bin" ];
 
     home.stateVersion = "25.11";
 
