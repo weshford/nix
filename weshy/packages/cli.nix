@@ -15,5 +15,6 @@
     p7zip
     ffmpeg
     yt-dlp
+    ani-cli
   ];
 }
