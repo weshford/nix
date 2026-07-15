@@ -14,8 +14,13 @@ in
       kitty
       kdePackages.dolphin
       kdePackages.ark
+      kdePackages.qtwayland
+      kdePackages.plasma-integration
+      kdePackages.qtsvg
+      kdePackages.kservice
       kdePackages.partitionmanager
       kdePackages.kate
+      shared-mime-info
       screen
       #  wget
     ];

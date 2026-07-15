@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, userConfig, ... }:
+{ config, lib, pkgs, userConfig, ... }:
 
 {
   imports =
@@ -14,6 +14,7 @@
       ./modules/development.nix
       ./modules/gaming.nix
       ./modules/windows-apps.nix
+      ./modules/flatpak.nix
       ./modules/alias.nix
       ./modules/basics.nix
     ];
@@ -94,6 +95,21 @@
     "/share/xdg-desktop-portal"
   ];
 
+  xdg.mime.enable = true;
+  xdg.menus.enable = true;
+
+  environment.etc."xdg/menus/applications.menu".text = builtins.readFile "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+
+  xdg.portal = {
+    enable = true;
+    config.common.default = [ "gtk" ];
+    config.hyprland.default = [ "hyprland" "gtk" ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -103,6 +119,7 @@
   my.modules.develop.enable = true;
   my.modules.gaming.enable = true;
   my.modules.windowsApps.enable = true;
+  my.modules.flatpak.enable = true;
   my.modules.shellAliases.enable = true;
   my.modules.basics.enable = true;
 
