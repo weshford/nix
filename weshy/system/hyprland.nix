@@ -11,6 +11,9 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
         "XCURSOR_SIZE,24"
         "XCURSOR_THEME,macOS"
         "XCURSOR_PATH,${config.home.homeDirectory}/.icons:${config.home.homeDirectory}/.local/share/icons:/usr/share/icons"
+        "GTK_USE_PORTAL,1"
+        "NIXOS_OZONE_WL,1"
+        "ELECTRON_OZONE_PLATFORM_HINT,auto"
       ];
 
       monitor = [
