@@ -3,6 +3,7 @@
 lib.mkIf (osConfig.programs.hyprland.enable or false) {
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
     plugins = [
       hyprbarsPluginPackage
     ];

@@ -1,4 +1,4 @@
-{ lib, osConfig, pkgs, ... }:
+{ config, lib, osConfig, pkgs, ... }:
 
 lib.mkIf (osConfig.programs.hyprland.enable or false) {
   gtk = {
@@ -7,6 +7,7 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
       name = "Adwaita";
       package = pkgs.gnome-themes-extra;
     };
+    gtk4.theme = config.gtk.theme;
     iconTheme = {
       name = "macOS Light";
       package = null;

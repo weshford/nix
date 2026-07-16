@@ -2,6 +2,7 @@
 
 {
   xdg.userDirs.enable = true;
+  xdg.userDirs.setSessionVariables = true;
 
   xdg.mimeApps = {
     enable = true;
