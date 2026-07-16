@@ -55,3 +55,6 @@ sops-updatekeys:
 # Interactive nix garbage collection helper.
 garbagecollect:
     bash scripts/garbagecollect.sh
+
+update this flake input:
+    nix flake lock --update-input {{input}}
