@@ -5,10 +5,6 @@ HOST := "aspire"
 default:
     @just --list
 
-# Update flake inputs and lock file.
-update:
-    nix flake update
-
 # Evaluate flake checks without building derivations.
 check-flake:
     nix flake check --no-build --accept-flake-config
