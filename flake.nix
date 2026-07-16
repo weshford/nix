@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-index-database = {
@@ -65,8 +65,8 @@
           {
             nixpkgs.overlays = [
               (final: prev: {
-                helium = helium.packages.${prev.system}.default;
-                luffy = luffy.packages.${prev.system}.default;
+                helium = helium.packages.${system}.default;
+                luffy = luffy.packages.${system}.default;
 
                 # openldap-2.6.13: the syncreplication tests are timing-sensitive and fail
                 # on slow / sandboxed builders ("provider and consumer databases differ").

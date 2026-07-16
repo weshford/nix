@@ -24,7 +24,7 @@ in
       python3
       nil
       nixd
-      nixfmt-rfc-style
+      nixfmt
     ];
   };
 }
