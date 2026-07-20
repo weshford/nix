@@ -7,13 +7,14 @@
 
   home.packages = with pkgs; [
     vlc
-    discord
+    # discord
     vesktop
     qbittorrent
     qdirstat
     mpv
     chafa
     libsixel
+    kid3
   ];
 
   # home.file.".local/bin/discord" = {
