@@ -82,20 +82,19 @@
                 #          only patches test017 — won't fully unbreak us; revisit when
                 #          upstream addresses test019 too)
                 # Drop this override once nixos-unstable ships a build that passes checks.
-                openldap = prev.openldap.overrideAttrs (_: {
-                  doCheck = false;
-                });
+                # openldap = prev.openldap.overrideAttrs (_: {
+                #   doCheck = false;
+                # });
 
                 # obs-studio-32.1.2: GCC internal compiler error during frontend build
                 # ("Please submit a full bug report"). Triggered by aggressive hardening
                 # flags on complex C++ code. Disabling stack protector works around the ICE.
                 #   Error snippet: gt_ggc_mx_lang_tree_node internal error during compilation
                 # TODO: Drop this override once GCC fix propagates to unstable.
-                obs-studio = prev.obs-studio.overrideAttrs (old: {
-                  hardeningDisable = (old.hardeningDisable or []) ++ [ "stackprotector" ];
-                });
+                # obs-studio = prev.obs-studio.overrideAttrs (old: {
+                #   hardeningDisable = (old.hardeningDisable or []) ++ [ "stackprotector" ];
+                # });
 
-                #TODO: out of memory issue ..
               })
             ];
           }
