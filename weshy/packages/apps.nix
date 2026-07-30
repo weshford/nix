@@ -15,6 +15,7 @@
     chafa
     libsixel
     kid3
+    kopuz
   ];
 
   # home.file.".local/bin/discord" = {
