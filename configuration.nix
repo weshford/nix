@@ -30,7 +30,7 @@
       "kopuz.cachix.org-1:J2X3AnAYhKTJW5S3aCLoA1ckonQXVNZMQvhZA0YAufw="
     ];
 
-  }
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
