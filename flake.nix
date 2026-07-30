@@ -38,7 +38,7 @@
     kopuz = {
       url = "github:temidaradev/kopuz";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
   };
 
   outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, luffy, ... }:
