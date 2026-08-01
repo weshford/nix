@@ -12,15 +12,15 @@ in
       wayland-utils
       wl-clipboard
       kitty
-      kdePackages.dolphin
-      kdePackages.ark
-      kdePackages.qtwayland
-      kdePackages.plasma-integration
-      kdePackages.qtsvg
-      kdePackages.kservice
-      kdePackages.partitionmanager
-      kdePackages.kate
-      shared-mime-info
+      kdePackages.dolphin                     # explorer
+      kdePackages.ark                         # so wie 7z
+      kdePackages.qtwayland                   # Qt Wayland platform plugin kp rr
+      kdePackages.plasma-integration          # kp rr
+      kdePackages.qtsvg                       # kp rr
+      kdePackages.kservice                    # kp rr
+      kdePackages.partitionmanager            # für formattierungen usw
+      kdePackages.kate                        # notepad / editor
+      shared-mime-info                        # kp rr
     ];
   };
 }

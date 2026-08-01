@@ -1,5 +1,7 @@
 { ... }:
 
+# größte scheiß eig aber egal
+
 {
   programs.fastfetch = {
     enable = true;

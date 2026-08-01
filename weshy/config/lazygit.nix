@@ -1,5 +1,7 @@
 { ... }:
 
+# TODO: credentials richtig machen? gehen net hier
+
 {
 	programs.lazygit = {
 		enable = true;

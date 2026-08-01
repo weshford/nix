@@ -1,5 +1,7 @@
 { pkgs, spicetifyPkgs, ... }:
 
+# spotify mit themes
+
 let
   wmpotifySrc = pkgs.fetchFromGitHub {
     owner = "Ingan121";

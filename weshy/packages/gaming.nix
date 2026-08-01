@@ -2,9 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    heroic
+    heroic                      # game launcher wichtig für epic games 
     goverlay
     protonup-qt
-    lutris
+    lutris                      # game launcher
   ];
 }

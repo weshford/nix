@@ -1,5 +1,7 @@
 { ... }:
 
+# task manager
+
 {
   programs.btop = {
     enable = true;
