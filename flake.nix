@@ -31,17 +31,13 @@
       url = "github:Lyndeno/apple-fonts.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    luffy = {
-      url = "github:DemonKingSwarn/luffy";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     kopuz = {
       url = "github:temidaradev/kopuz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, luffy, ... }:
+  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -71,7 +67,6 @@
               (final: prev: {
                 ## overlays & fixes hier
                 helium = helium.packages.${system}.default;
-                luffy = luffy.packages.${system}.default;
               })
             ];
           }
