@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+    wget
+    screen
     htop
     fd
     fzf

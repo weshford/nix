@@ -21,8 +21,6 @@ in
       kdePackages.partitionmanager
       kdePackages.kate
       shared-mime-info
-      screen
-      #  wget
     ];
   };
 }
