@@ -15,7 +15,7 @@ in
     programs.gamemode.enable = true;
 
     services.sunshine = {
-      enable = true;
+      enable = false;
       openFirewall = true;
       capSysAdmin = true;
     };
