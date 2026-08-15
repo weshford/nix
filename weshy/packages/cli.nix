@@ -18,5 +18,20 @@
     ffmpeg
     yt-dlp
     ani-cli
+
+    # for screen-toolkit
+    grim
+    hyprpicker
+    slurp
+    tesseract
+    imagemagick
+    zbar
+    curl
+    bc
+    wf-recorder
+    wl-screenrec
+    swappy
+    satty
+    translate-shell
   ];
 }

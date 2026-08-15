@@ -8,17 +8,9 @@ lib.mkIf useNoctalia {
 
   home.packages = with pkgs; [
     # the plugin "screen toolkit" needs these
-    # ffmpeg, curl too but ffmpeg for example is in my cli.nix
-    grim
-    slurp
     wl-clipboard
-    tesseract
-    imagemagick
-    zbar
     jq
-    wl-screenrec #wf-recorder for fallback
     gifski
-    translate-shell
   ];
 
   programs.noctalia = {
