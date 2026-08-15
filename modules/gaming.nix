@@ -24,6 +24,7 @@ in
       mangohud
       chiaki-ng
       ryubing
+      prismlauncher             # mc launcher
     ];
   };
 }
