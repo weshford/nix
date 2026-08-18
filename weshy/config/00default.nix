@@ -12,5 +12,6 @@
     ./lazygit.nix
     ./btop.nix
     ./fastfetch.nix
+    ./flakepoint.nix
   ];
 }

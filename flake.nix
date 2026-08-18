@@ -36,9 +36,13 @@
     #   url = "github:temidaradev/kopuz";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    flakepoint = {
+      url = "github:weshford/flakepoint";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, ... }:
+  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, flakepoint, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -68,6 +72,7 @@
               (final: prev: {
                 ## overlays & fixes hier
                 helium = helium.packages.${system}.default;
+                flakepoint = flakepoint.packages.${system}.default;
               })
             ];
           }

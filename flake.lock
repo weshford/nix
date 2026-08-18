@@ -77,6 +77,26 @@
         "type": "github"
       }
     },
+    "flakepoint": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786976107,
+        "narHash": "sha256-YzK3k7MNzSfdOwZ6IFeTQI2LRki2yWrsS424O5I7Ttg=",
+        "owner": "weshford",
+        "repo": "flakepoint",
+        "rev": "b54cd2bf3061c6938b8a3d5be9d8377b3e9dbd62",
+        "type": "github"
+      },
+      "original": {
+        "owner": "weshford",
+        "repo": "flakepoint",
+        "type": "github"
+      }
+    },
     "helium": {
       "inputs": {
         "nixpkgs": [
@@ -207,6 +227,7 @@
     "root": {
       "inputs": {
         "apple-fonts-nix": "apple-fonts-nix",
+        "flakepoint": "flakepoint",
         "helium": "helium",
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
