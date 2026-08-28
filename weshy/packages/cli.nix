@@ -18,6 +18,7 @@
     ffmpeg
     yt-dlp
     ani-cli
+    nvitop
 
     # for screen-toolkit
     grim
