@@ -17,7 +17,6 @@
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia/cachix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     helium = {
       url = "github:schembriaiden/helium-browser-nix-flake";
