@@ -9,5 +9,6 @@
     ./defaults.nix
     ./hyprland.nix
     ./wayland-common.nix
+    ./clipboard.nix
   ];
 }
