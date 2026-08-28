@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia/cachix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helium = {
@@ -73,6 +73,7 @@
                 ## overlays & fixes hier
                 helium = helium.packages.${system}.default;
                 flakepoint = flakepoint.packages.${system}.default;
+                noctalia = noctalia.packages.${system}.default;
               })
             ];
           }
@@ -80,7 +81,6 @@
           nix-index-database.nixosModules.nix-index
           {
             home-manager.sharedModules = [
-              noctalia.homeModules.default
               spicetify-nix.homeManagerModules.default
               sops-nix.homeManagerModules.sops
             ];

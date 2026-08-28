@@ -6,13 +6,6 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.backupFileExtension = "hm-backup-${config.system.nixos.label}";
-  home-manager.sharedModules = [
-    ({ lib, osConfig, ... }: {
-      programs.noctalia.enable = lib.mkDefault (
-        osConfig.programs.hyprland.enable or false
-      );
-    })
-  ];
 
   home-manager.users.${userConfig.username} = {
     # Enable all home packages

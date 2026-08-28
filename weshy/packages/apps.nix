@@ -6,6 +6,7 @@
   programs.obs-studio.enable = true;
 
   home.packages = with pkgs; [
+    noctalia
     vlc                         # media player
     # discord                   # brauche net weil vesktop
     vesktop                     # discord alternative
