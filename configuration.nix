@@ -139,7 +139,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.config.permittedInsecurePackages = [
-    "electron-40.10.5" # end of life TODO: find fix?
+    # nothing unsafe currently
   ];
 
   # Avoid abrupt DM restarts during switch; apply desktop stack changes via boot + reboot.
