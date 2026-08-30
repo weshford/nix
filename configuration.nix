@@ -81,6 +81,7 @@
   services.gvfs.enable = true;
   services.earlyoom.enable = true;
 
+  services.gnome.gnome-keyring.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -145,7 +146,6 @@
   # systemd.services.display-manager.restartIfChanged = false;
 
   my.modules.develop.enable = true;
-  my.modules.gaming.enable = true;
   my.modules.windowsApps.enable = true;
   my.modules.shellAliases.enable = true;
   my.modules.basics.enable = true;
