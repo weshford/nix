@@ -21,6 +21,7 @@ in
       kdePackages.partitionmanager            # für formattierungen usw
       kdePackages.kate                        # notepad / editor
       shared-mime-info                        # kp rr
+      exfatprogs                              # exfat support halt für kde partition
     ];
   };
 }
