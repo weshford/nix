@@ -12,7 +12,6 @@
       ./aspire/hardware.nix
       ./aspire/gpu.nix
       ./modules/development.nix
-      ./modules/gaming.nix
       ./modules/windows-apps.nix
       ./modules/alias.nix
       ./modules/basics.nix
