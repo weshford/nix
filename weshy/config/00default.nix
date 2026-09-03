@@ -12,5 +12,6 @@
     ./btop.nix
     ./fastfetch.nix
     ./flakepoint.nix
+    ./dotfiles.nix
   ];
 }
