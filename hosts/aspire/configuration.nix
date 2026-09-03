@@ -19,4 +19,16 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "aspire";
+
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
+  };
+
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 16 * 1024;
+    priority = 10;
+  }];
 }
