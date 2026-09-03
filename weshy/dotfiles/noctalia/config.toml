@@ -1,35 +1,350 @@
-[theme]
-mode = "dark"
+[bar]
+order = [ "default" ]
 
-[bar.Taskbar]
-position = "top"
-thickness = 27
-font_scale = 1.0
+    [bar.default]
+    border = "hover"
+    center = [ "notes", "media", "audio_visualizer", "status" ]
+    end = [
+        "privacy",
+        "tray",
+        "notifications",
+        "bluetooth",
+        "network",
+        "volume",
+        "battery",
+        "clock",
+        "control-center",
+        "session"
+    ]
+    margin_ends = 0
+    radius = 0
+    start = [ "launcher", "clipboard", "widget", "wallpaper", "workspaces" ]
+    thickness = 27
 
-[bar.Taskbar.start]
-items = ["launcher", "clipboard", "widget", "wallpaper", "workspaces"]
-
-[bar.Taskbar.end]
-items = ["privacy", "tray", "notifications", "bluetooth", "network", "volume", "battery", "clock", "control-center", "session"]
-
-[bar.Taskbar.center]
-items = ["notes", "media", "audio_visualizer", "status"]
-
-[bar.Taskbar]
-show_on_workspace_switch = true
-smart_auto_hide = false
-
-[desktop_widgets]
-enabled = true
+[battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_0"]
+warning_threshold = 10
 
 [calendar]
 enabled = true
-refresh_minutes = 15
 
-[dock]
+    [calendar.account.personal_icloud]
+    name = "weshy"
+    provider = "icloud"
+    type = "caldav"
+    username = "weshford@icloud.com"
+
+[control_center]
+sidebar = "full"
+sidebar_section = "full"
+
+[location]
+address = "Fellbach, Germany"
+
+[lockscreen]
+allow_empty_password = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@DVI-I-4",
+    "lockscreen-login-box@DVI-I-3",
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-login-box@DVI-I-2",
+    "lockscreen-login-box@DVI-I-1",
+    "lockscreen-login-box@eDP-1"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 961.0
+    output = "DVI-I-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-2"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 961.0
+    output = "DVI-I-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-3"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 961.0
+    output = "DVI-I-3"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-3".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-4"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DVI-I-4"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-4".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 961.0
+    output = "HDMI-A-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 961.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[osd]
+orientation = "vertical"
+
+[plugin_settings."noctalia/wallhaven"]
+api_key = "tWvL4qylvnM78IhDXbMLQGDvfQCGnvbz"
+
+[plugins]
+enabled = [
+    "noctalia/screen_recorder",
+    "noctalia/notes",
+    "wesh/screen-toolkit",
+    "alexander/screen-toolkit",
+    "aristides/udiskie"
+]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+    [[plugins.source]]
+    enabled = false
+    kind = "path"
+    location = "~/dev/noctalia-plugins/wesh"
+    name = "weshhh"
+
+[shell]
+font_family = "SF Pro Text"
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = true
+telemetry_enabled = true
+
+    [shell.launcher]
+    compact = true
+    session_search = true
+
+    [shell.panel]
+    transparency_mode = "soft"
+
+[theme]
+builtin = "Dracula"
+mode = "light"
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+[wallpaper]
+transition = [ "honeycomb" ]
+transition_duration = 3000
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/weshy/Pictures/wallpaper/soraroxas.png"
+
+    [wallpaper.last]
+    path = "/home/weshy/Pictures/wallpaper/soraroxas.png"
+
+    [wallpaper.monitors.DVI-I-1]
+    path = "/home/weshy/Pictures/wallpaper/soraroxas.png"
+
+    [wallpaper.monitors.DVI-I-2]
+    path = "/home/weshy/Pictures/wallpaper/soraroxas.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/weshy/Pictures/wallpaper/soraroxas.png"
+
+[widget.audio_visualizer]
+bands = 128
+color_2 = "tertiary"
+show_when_idle = true
+width = 202
+
+[widget.battery]
+hide_when_plugged = true
+
+[widget.clipboard]
+enabled = true
+
+[widget.clock]
+format = "{:%H:%M:%S}"
+
+[widget.control-center]
+custom_image = "/home/weshy/.nixos/static/icons/syxx.png"
+
+[widget.custom_button_2]
+type = "custom_button"
+
+[widget.media]
+album_art_only = true
+hide_when_no_media = true
+
+[widget.network]
+show_label = false
+
+[widget.notes]
+type = "noctalia/notes:notes"
+
+[widget.notifications]
+hide_when_no_unread = true
+
+[widget.privacy]
+hide_inactive = true
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.status]
+type = "aristides/udiskie:status"
+
+[widget.tray]
+drawer = true
+hidden = [ "udiskie" ]
+
+[widget.volume]
+show_label = false
+
+[widget.wallpaper]
 enabled = false
 
-[audio]
-enable_overdrive = false
-enable_sounds = false
-sound_volume = 0.5
+[widget.widget]
+type = "alexander/screen-toolkit:widget"
