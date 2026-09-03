@@ -130,6 +130,9 @@
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
+  services.openssh.enable = true;
+  networking.firewall.allowedTCPPorts = [ 22 ];
+
   networking.networkmanager.enable = true;
 
   # This value determines the NixOS release from which the default
