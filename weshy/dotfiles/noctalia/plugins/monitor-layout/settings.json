@@ -1,8 +1,0 @@
-{
-  "backend": "auto",
-  "swayCommand": "swaymsg",
-  "hyprctlCommand": "hyprctl",
-  "snapToGrid": true,
-  "gridSize": 40,
-  "iconColor": "primary"
-}

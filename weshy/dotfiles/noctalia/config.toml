@@ -1,0 +1,35 @@
+[theme]
+mode = "dark"
+
+[bar.Taskbar]
+position = "top"
+thickness = 27
+font_scale = 1.0
+
+[bar.Taskbar.start]
+items = ["launcher", "clipboard", "widget", "wallpaper", "workspaces"]
+
+[bar.Taskbar.end]
+items = ["privacy", "tray", "notifications", "bluetooth", "network", "volume", "battery", "clock", "control-center", "session"]
+
+[bar.Taskbar.center]
+items = ["notes", "media", "audio_visualizer", "status"]
+
+[bar.Taskbar]
+show_on_workspace_switch = true
+smart_auto_hide = false
+
+[desktop_widgets]
+enabled = true
+
+[calendar]
+enabled = true
+refresh_minutes = 15
+
+[dock]
+enabled = false
+
+[audio]
+enable_overdrive = false
+enable_sounds = false
+sound_volume = 0.5
