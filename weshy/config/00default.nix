@@ -6,6 +6,7 @@
     ./git.nix
     ./helium.nix
     ./kitty.nix
+    ./yazi.nix
     ./neovim.nix
     ./spicetify.nix
     ./lazygit.nix

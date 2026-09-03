@@ -10,7 +10,6 @@
     ripgrep
     eza
     btop
-    yazi
     unrar
     unzip
     zip
