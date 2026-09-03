@@ -56,15 +56,13 @@
 
       hyprbarsPluginPackage = nixpkgs.legacyPackages.${system}.hyprlandPlugins.hyprbars;
 
-    in
-    {
-      nixosConfigurations.aspire = lib.nixosSystem {
+      mkHost = hostConfigPath: lib.nixosSystem {
         system = system;
         specialArgs = {
           inherit userConfig;
         };
         modules = [
-          ./configuration.nix
+          hostConfigPath
           sops-nix.nixosModules.sops
           {
             nixpkgs.overlays = [
@@ -91,5 +89,9 @@
           })
         ];
       };
+    in
+    {
+      nixosConfigurations.aspire = mkHost ./hosts/aspire/configuration.nix;
+      nixosConfigurations.omen = mkHost ./hosts/omen/configuration.nix;
     };
 }
