@@ -91,7 +91,6 @@
       };
     in
     {
-      nixosConfigurations.aspire = mkHost ./hosts/aspire/configuration.nix;
-      nixosConfigurations.omen = mkHost ./hosts/omen/configuration.nix;
+      nixosConfigurations.omen = mkHost ./configuration.nix;
     };
 }
