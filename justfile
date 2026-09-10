@@ -1,6 +1,6 @@
 set shell := ["bash", "-cu"]
 
-HOST := "aspire"
+HOST := "omen"
 
 default:
     @just --list

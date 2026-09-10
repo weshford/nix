@@ -1,14 +1,13 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Keep nouveau from loading so NVIDIA can bind the device.
   boot.blacklistedKernelModules = [ "nouveau" ];
 
-  services.xserver.videoDrivers = [ "nvidia" "displaylink" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-    open = true; # Required on >=560, recommended for Turing (GTX 16xx)
+    open = true;
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;

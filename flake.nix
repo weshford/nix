@@ -49,27 +49,25 @@
       userConfig = {
         username = "weshy";
         fullName = "weshy";
-        gitName = "*weshford";
+        gitName = "weshford";
         gitEmail = "95880628+weshford@users.noreply.github.com";
         extraGroups = [ "networkmanager" "wheel" ];
       };
 
       hyprbarsPluginPackage = nixpkgs.legacyPackages.${system}.hyprlandPlugins.hyprbars;
 
-    in
-    {
-      nixosConfigurations.aspire = lib.nixosSystem {
+      mkHost = hostConfigPath: lib.nixosSystem {
         system = system;
         specialArgs = {
           inherit userConfig;
         };
         modules = [
-          ./configuration.nix
+          hostConfigPath
           sops-nix.nixosModules.sops
           {
             nixpkgs.overlays = [
               (final: prev: {
-                ## overlays & fixes hier
+                ## overlays & fixes hier ..
                 helium = helium.packages.${system}.default;
                 flakepoint = flakepoint.packages.${system}.default;
                 noctalia = noctalia.packages.${system}.default;
@@ -91,5 +89,8 @@
           })
         ];
       };
+    in
+    {
+      nixosConfigurations.omen = mkHost ./configuration.nix;
     };
 }

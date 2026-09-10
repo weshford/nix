@@ -18,7 +18,7 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
       ];
 
       monitor = [
-        "eDP-1,1920x1080@60.02,2200x840,1"
+        "eDP-1,preferred,auto,1"
         "DVI-I-1,1920x1080@100,3160x-240,1"
         "DVI-I-2,1920x1080@100,1240x-240,1"
         " ,preferred,auto,1"
@@ -155,7 +155,7 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
 
       bindl = [
         ", switch:on:Lid Switch, exec, sh -lc \"external_monitor=\$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\\\"^(eDP|LVDS|DSI)\\\") | not) | .name' | head -n1); if [ -n \\\"\$external_monitor\\\" ]; then hyprctl keyword monitor \\\"eDP-1,disable\\\"; fi\""
-        ", switch:off:Lid Switch, exec, sh -lc \"external_monitor=\$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\\\"^(eDP|LVDS|DSI)\\\") | not) | .name' | head -n1); if [ -n \\\"\$external_monitor\\\" ]; then hyprctl keyword monitor \\\"eDP-1,1920x1080@60.02,2200x840,1\\\"; fi\""
+        ", switch:off:Lid Switch, exec, sh -lc \"external_monitor=\$(hyprctl monitors -j | jq -r '.[] | select(.name | test(\\\"^(eDP|LVDS|DSI)\\\") | not) | .name' | head -n1); if [ -n \\\"\$external_monitor\\\" ]; then hyprctl keyword monitor \\\"eDP-1,preferred,auto,1\\\"; fi\""
         # TODO: Abwarten ...
         # ", switch:on:Lid Switch, exec, $ipc dpms-on"
         # ", switch:off:Lid Switch, exec, $ipc dpms-off"
