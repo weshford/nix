@@ -22,6 +22,7 @@ in
       kdePackages.kate                        # notepad / editor
       shared-mime-info                        # kp rr
       exfatprogs                              # exfat support halt für kde partition
+      efibootmgr
     ];
   };
 }
