@@ -67,7 +67,7 @@
           {
             nixpkgs.overlays = [
               (final: prev: {
-                ## overlays & fixes hier
+                ## overlays & fixes hier ..
                 helium = helium.packages.${system}.default;
                 flakepoint = flakepoint.packages.${system}.default;
                 noctalia = noctalia.packages.${system}.default;
