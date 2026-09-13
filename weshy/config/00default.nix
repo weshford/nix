@@ -12,7 +12,7 @@
     ./lazygit.nix
     ./btop.nix
     ./fastfetch.nix
-    ./flakepoint.nix
+    # ./flakepoint.nix
     ./dotfiles.nix
   ];
 }
