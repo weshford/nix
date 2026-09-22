@@ -30,6 +30,10 @@
       url = "github:Lyndeno/apple-fonts.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.1.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # später mal vllt .. grad unbrauchbar für mich
     # kopuz = {
     #   url = "github:temidaradev/kopuz";
@@ -42,7 +46,7 @@
     # };
   };
 
-  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, ... }:
+  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, lanzaboote, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -64,6 +68,7 @@
         };
         modules = [
           hostConfigPath
+          lanzaboote.nixosModules.lanzaboote
           sops-nix.nixosModules.sops
           {
             nixpkgs.overlays = [

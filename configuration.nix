@@ -116,7 +116,13 @@
 
   networking.hostName = "omen";
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+    # secure boot keys here
+  };
+  environment.systemPackages = [ pkgs.sbctl ];
   boot.loader.systemd-boot.windows = {
     windows = {
       title = "Windows 11";
