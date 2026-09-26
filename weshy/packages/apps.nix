@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     noctalia
+    bitwarden-desktop           # password manager
     vlc                         # media player
     # discord                   # brauche net weil vesktop
     vesktop                     # discord alternative
@@ -29,7 +30,7 @@
 
   # home.file.".local/share/applications/discord.desktop".text = ''
   #   [Desktop Entry]
-  #   Type=Application
+  #   Type=Application<d
   #   Name=Discord
   #   Exec=${config.home.homeDirectory}/.local/bin/discord %U
   #   Icon=discord
