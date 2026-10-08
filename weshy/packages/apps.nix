@@ -11,8 +11,7 @@
     # discord                   # brauche net weil vesktop
     vesktop                     # discord alternative
     qbittorrent                 # pirat
-    qdirstat                    # so wie wiztreestar oder wie des hieß auf windows .. TODO: mal schauen ob andere gibt oder ob schneller geht .. windows ging viel schneller
-    mpv                         # media player ersatz
+    # qdirstat                  # ersetzt mit weshtatistic
     chafa                       # ascii art generator TODO: seit wann hab ich des lol .. gucken ob man braucht sieht sehr unnötig aus
     libsixel                    # image viewer / converter
     kid3                        # id3 tag editor
