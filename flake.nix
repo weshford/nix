@@ -44,9 +44,13 @@
     #   url = "github:weshford/flakepoint";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    weshtatistic = {
+      url = "github:weshford/weshtatistic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, lanzaboote, ... }:
+  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, lanzaboote, weshtatistic, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -77,6 +81,7 @@
                 helium = helium.packages.${system}.default;
                 # flakepoint = flakepoint.packages.${system}.default;
                 noctalia = noctalia.packages.${system}.default;
+                weshtatistic = weshtatistic.packages.${system}.default;
               })
             ];
           }

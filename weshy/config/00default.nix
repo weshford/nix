@@ -14,5 +14,6 @@
     ./fastfetch.nix
     # ./flakepoint.nix
     ./dotfiles.nix
+    ./weshtatistic.nix
   ];
 }
