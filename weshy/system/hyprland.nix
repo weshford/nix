@@ -98,6 +98,16 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
         "$mod SHIFT, V, togglefloating,"
         "$mod, F, fullscreen,"
 
+        # Window focus and movement
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+        "$mod SHIFT, left, movewindow, l"
+        "$mod SHIFT, right, movewindow, r"
+        "$mod SHIFT, up, movewindow, u"
+        "$mod SHIFT, down, movewindow, d"
+
         # Workspace keybinds
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -126,8 +136,7 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
         "$mod SHIFT, H, exec, $ipc panel-toggle wallpaper"
         "$mod, V, exec, $ipc panel-toggle clipboard"
         "$mod, I, exec, $ipc settings-open"
-        # "$mod, L, exec, $ipc lockScreen lock" # TODO : später machen wenn ich es testen kann
-        # "$mod, R, exec, $ipc launcher command" # TODO: check if not needed anymore..
+        "$mod, L, exec, loginctl lock-session"
         "ALT, TAB, exec, $ipc window-switcher"
         ", XF86PowerOff, exec, $ipc sessionMenu toggle"
 
@@ -151,6 +160,14 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
         ", XF86AudioPlay, exec, $ipc media playPause"
         ", XF86AudioNext, exec, $ipc media next"
         ", XF86AudioPrev, exec, $ipc media previous"
+      ];
+
+      binde = [
+        # Resize the active window with repeated key presses
+        "$mod CTRL, left, resizeactive, -40 0"
+        "$mod CTRL, right, resizeactive, 40 0"
+        "$mod CTRL, up, resizeactive, 0 -40"
+        "$mod CTRL, down, resizeactive, 0 40"
       ];
 
       bindl = [
