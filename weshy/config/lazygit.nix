@@ -14,8 +14,8 @@
 				expandedSidePanelWeight = 2;
 				mainPanelSplitMode = "flexible";
 				splitDiff = "auto";
-				wrapLinesInStagingView = true;
-				useHunkModeInStagingView = true;
+				wrapLinesInDiffView = true;
+				useHunkModeInDiffView = true;
 				scrollHeight = 2;
 				scrollOffMargin = 4;
 				scrollOffBehavior = "margin";

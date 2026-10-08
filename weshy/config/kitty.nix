@@ -9,6 +9,8 @@
     settings = {
       background_opacity = "0.90";
       dynamic_background_opacity = "yes";
+      remember_window_size = "no";
+      remember_window_position = "no";
       window_padding_width = 10;
       cursor_shape = "beam";
       cursor_blink_interval = "0.5";
