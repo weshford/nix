@@ -1,25 +1,35 @@
 [bar]
-order = [ "default" ]
+order = [ "default", "tools" ]
 
     [bar.default]
     border = "hover"
-    center = [ "notes", "media", "audio_visualizer", "status" ]
+    center = [ "media", "audio_visualizer" ]
     end = [
-        "privacy",
         "tray",
         "notifications",
+        "keyboard_layout",
         "bluetooth",
         "network",
+        "dns-switcher",
         "volume",
         "battery",
         "clock",
-        "control-center",
-        "session"
+        "date",
+        "control-center"
     ]
     margin_ends = 0
     radius = 0
-    start = [ "launcher", "clipboard", "widget", "wallpaper", "workspaces" ]
+    start = [ "workspaces", "active_window" ]
     thickness = 27
+
+    [bar.tools]
+    center = []
+    enabled = true
+    end = [ "clipboard", "launcher", "session" ]
+    margin_ends = 0
+    position = "left"
+    radius = 0
+    start = [ "privacy", "tracker_2", "cmd_runner_2", "current_2", "github_2", "notes_2" ]
 
 [battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_0"]
 warning_threshold = 10
@@ -36,6 +46,32 @@ enabled = true
 [control_center]
 sidebar = "full"
 sidebar_section = "full"
+width = 960
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+auto_hide = true
+background_opacity = 0.14999999664723873
+cross_axis_padding = 4
+icon_size = 46
+item_spacing = 0
+main_axis_padding = 5
+margin_edge = 1
+reserve_space = false
+show_dots = true
+
+[hot_corners]
+delay_ms = 100
 
 [location]
 address = "Fellbach, Germany"
@@ -47,6 +83,10 @@ allow_empty_password = true
 enabled = false
 schema_version = 2
 widget_order = [
+    "lockscreen-login-box@DP-5",
+    "lockscreen-login-box@DP-4",
+    "lockscreen-login-box@DP-3",
+    "lockscreen-login-box@DP-2",
     "lockscreen-login-box@DVI-I-4",
     "lockscreen-login-box@DVI-I-3",
     "lockscreen-login-box@HDMI-A-1",
@@ -59,6 +99,114 @@ widget_order = [
     cell_size = 16
     major_interval = 4
     visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-3"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-4"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-4"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-4".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-5"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-5"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-5".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@DVI-I-1"]
     box_height = 196.0
@@ -174,8 +322,8 @@ widget_order = [
     cx = 960.0
     cy = 961.0
     output = "HDMI-A-1"
-    placement_height = 0.0
-    placement_width = 0.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -199,9 +347,9 @@ widget_order = [
     box_height = 196.0
     box_width = 720.0
     cx = 960.0
-    cy = 961.0
+    cy = 1067.77783203125
     output = "eDP-1"
-    placement_height = 1080.0
+    placement_height = 1200.0
     placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
@@ -225,16 +373,30 @@ widget_order = [
 [osd]
 orientation = "vertical"
 
+[plugin_settings."cleboost/anilist"]
+client_id = "lol"
+client_secret = "lol"
+
+[plugin_settings."nightwatch75/dns-switcher"]
+custom_1 = "pihole = 192.168.2.229"
+
 [plugin_settings."noctalia/wallhaven"]
-api_key = "tWvL4qylvnM78IhDXbMLQGDvfQCGnvbz"
+api_key = "tWvL4qylvnM78IhDXbMLQGDvfQCGnvbz" # yeah this was pushed .. but I generated a new one so whatever
+
+[plugin_settings."tphilippot/git_companion"]
+group = "weshford"
 
 [plugins]
 enabled = [
     "noctalia/screen_recorder",
     "noctalia/notes",
     "wesh/screen-toolkit",
-    "alexander/screen-toolkit",
-    "aristides/udiskie"
+    "nightwatch75/dns-switcher",
+    "cleboost/anilist",
+    "nocode-96/cmd-runner",
+    "thaer99ob/default-apps",
+    "shangshui0302/github-kanban",
+    "3ri4ng0ld/ip-monitor"
 ]
 
     [[plugins.source]]
@@ -265,7 +427,13 @@ telemetry_enabled = true
     session_search = true
 
     [shell.panel]
+    control_center_placement = "floating"
+    control_center_position = "center"
     transparency_mode = "soft"
+
+    [shell.screenshot]
+    annotate = true
+    show_cursor = true
 
 [theme]
 builtin = "Dracula"
@@ -275,13 +443,19 @@ wallpaper_scheme = "m3-content"
 
 [wallpaper]
 transition = [ "honeycomb" ]
-transition_duration = 3000
+transition_duration = 6100
 transition_on_startup = true
 
     [wallpaper.default]
     path = "/home/weshy/Pictures/wallpaper/soraroxas.png"
 
     [wallpaper.last]
+    path = "/home/weshy/Pictures/wallpaper/soraroxas.png"
+
+    [wallpaper.monitors.DP-2]
+    path = "/home/weshy/Pictures/wallpaper/soraroxas.png"
+
+    [wallpaper.monitors.DP-3]
     path = "/home/weshy/Pictures/wallpaper/soraroxas.png"
 
     [wallpaper.monitors.DVI-I-1]
@@ -308,11 +482,29 @@ enabled = true
 [widget.clock]
 format = "{:%H:%M:%S}"
 
+[widget.cmd_runner_2]
+show_label = false
+type = "nocode-96/cmd-runner:cmd-runner"
+
 [widget.control-center]
 custom_image = "/home/weshy/.nixos/static/icons/syxx.png"
 
+[widget.current_2]
+type = "thaer99ob/default-apps:current"
+
 [widget.custom_button_2]
 type = "custom_button"
+
+[widget.date]
+format = "{:%A, der %d. %B}"
+
+[widget.dns-switcher]
+enable_scroll = false
+show_label = false
+type = "nightwatch75/dns-switcher:dns-switcher"
+
+[widget.github_2]
+type = "shangshui0302/github-kanban:github"
 
 [widget.media]
 album_art_only = true
@@ -322,6 +514,9 @@ hide_when_no_media = true
 show_label = false
 
 [widget.notes]
+type = "noctalia/notes:notes"
+
+[widget.notes_2]
 type = "noctalia/notes:notes"
 
 [widget.notifications]
@@ -336,15 +531,18 @@ type = "noctalia/screen_recorder:recorder"
 [widget.status]
 type = "aristides/udiskie:status"
 
+[widget.tracker_2]
+type = "cleboost/anilist:tracker"
+
 [widget.tray]
-drawer = true
+drawer = false
 hidden = [ "udiskie" ]
 
 [widget.volume]
 show_label = false
 
 [widget.wallpaper]
-enabled = false
+enabled = true
 
 [widget.widget]
 type = "alexander/screen-toolkit:widget"
