@@ -139,7 +139,8 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
         "$mod, I, exec, $ipc settings-open"
         "$mod, L, exec, loginctl lock-session"
         "ALT, TAB, exec, $ipc window-switcher"
-        ", XF86PowerOff, exec, $ipc sessionMenu toggle"
+        ", XF86PowerOff, exec, $ipc panel-toggle session"
+        "$mod SHIFT CTRL, P, exec, $ipc panel-toggle session"
 
         # wichtig
         "$mod, E, exec, dolphin"
