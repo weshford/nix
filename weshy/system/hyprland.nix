@@ -96,7 +96,8 @@ lib.mkIf (osConfig.programs.hyprland.enable or false) {
         "$mod, C, killactive,"
         "$mod SHIFT ALT, L, exit,"
         "$mod SHIFT, V, togglefloating,"
-        "$mod, F, fullscreen,"
+        "$mod SHIFT, F, fullscreen,"
+        "$mod, F, fullscreen, 1"
 
         # Window focus and movement
         "$mod, left, movefocus, l"
