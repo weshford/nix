@@ -1,4 +1,4 @@
-{ userConfig, ... }:
+{ pkgs, userConfig, ... }:
 
 {
   programs.git = {
@@ -11,6 +11,7 @@
       init.defaultBranch = "main";
       pull.rebase = false;
       core.editor = "nano";
+      credential.helper = "!${pkgs.gh}/bin/gh auth git-credential";
     };
   };
 }
