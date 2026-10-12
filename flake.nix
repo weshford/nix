@@ -48,9 +48,13 @@
       url = "github:weshford/weshtatistic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fresh = {
+      url = "github:sinelaw/fresh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, lanzaboote, weshtatistic, ... }:
+  outputs = { nixpkgs, home-manager, spicetify-nix, noctalia, nix-index-database, helium, sops-nix, apple-fonts-nix, lanzaboote, weshtatistic, fresh, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -82,6 +86,7 @@
                 # flakepoint = flakepoint.packages.${system}.default;
                 noctalia = noctalia.packages.${system}.default;
                 weshtatistic = weshtatistic.packages.${system}.default;
+                fresh = fresh.packages.${system}.default;
               })
             ];
           }

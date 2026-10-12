@@ -15,5 +15,6 @@
     # ./flakepoint.nix
     ./dotfiles.nix
     ./weshtatistic.nix
+    ./fresh.nix
   ];
 }
